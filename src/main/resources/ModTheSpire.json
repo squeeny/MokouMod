@@ -1,0 +1,12 @@
+{
+  "modid": "${project.artifactId}",
+  "name": "${project.name}",
+  "author_list": ["squeeny"],
+  "description": "Reach for the moon, Immortal Smoke!\nThis Mod adds Fujiwara no Mokou [藤原 妹紅] from Touhou to Slay the Spire.\n\nWant to translate this?\nReach out to me!",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod", "stslib", "CapriCore"],
+  "update_json": ""
+}
+
