@@ -2,83 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2301ff7f-f530-4bc6-b6eb-7a47647bbc74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnhanceBurstAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GainIgniteForRemovedBlockAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/PhoenixFeathersAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/StokeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/TriggerIgniteAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/TripleIgniteAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_overheat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/WarmUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onBurstSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onEnemyGainIgniteSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onIgniteLoseHPSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onLoseIgniteSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onLoseOverheatSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onOtherExhaustSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/AnimationPatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/onOtherExhaust.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeartOfFirePower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/MeltdownPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/MokouFlightPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/ObtainRelicLater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MokouMod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MokouMod.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/BetterSpriterAnimation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AddOverheatAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AddOverheatAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AddOverheatAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/BurningHiddenBulletAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/BurningHiddenBulletAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CataclysmAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CataclysmAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CheckBurstAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CheckBurstAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ClearAllDebuffsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ClearAllDebuffsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ConvertIgniteVigorAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ConvertIgniteVigorAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DamageAllAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardAnyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardAnyAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardDrawPileAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardDrawPileAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardPileToHandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DiscardPileToHandAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnchantingBambooForestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnchantingBambooForestAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnterBurstAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnterBurstAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CheckBurstAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnchantingBambooForestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ForestOfTheLostAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnterBurstAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EruptionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EruptionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustHandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustHandAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToDiscardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToDiscardAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToHandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToHandAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustTopCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustTopCardAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExtinguishAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExtinguishAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FireBlastAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FireBlastAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FlameSlingPhaseIncAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FlameSlingPhaseIncAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GainBlockPerIgniteStackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GainBlockPerIgniteStackAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/HouraiInfusedCataclysmAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/IgneousBlowAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/IgneousBlowAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/IndiscriminateIgnitionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/IndiscriminateIgnitionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/LoseOverheatAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/LoseOverheatAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/OverheatCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/OverheatCardAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ProfanedFlameAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ProfanedFlameAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ReverseFlameSlingAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ReverseFlameSlingAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/LoseOverheatAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/OverheatCardAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ProfanedFlameAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SacredFireAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SacredFireAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SwitchPilesAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SwitchPilesAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/VolatileScorchingBlastAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/VolatileScorchingBlastAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/OverheatText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/OverheatText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/ProfanedFlameMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/ProfanedFlameMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/VolatileScorchingBlastAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GeothermalAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/OverheatText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/ProfanedFlameMod.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Defend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Defend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Flare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Flare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Flare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Strike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/EternalBurstReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/EternalBurstReactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlareStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlareStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IgnitionFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IgnitionFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ImperishableNight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ImperishableNight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IgnitionFlare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ImperishableNight.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingFlare.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingShot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/UncontrollableSolarReaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/UncontrollableSolarReaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/VolatileScorchingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/VolatileScorchingBlast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/WilloWisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/WilloWisp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BlueFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BlueFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/VolatileScorchingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/WilloWisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IndiscriminateIgnition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BlueFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SpontaneousHumanCombustion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/EnchantingBambooForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/EnchantingBambooForest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Extinguish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Extinguish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/GeothermalAscension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/GeothermalAscension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/GeothermalAscension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Geothermal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/HouraiForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/HouraiForge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/MeltingWhiteFusion.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/RadiantBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/RadiantBlade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rekindle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rekindle.java" afterDir="false" />
@@ -86,13 +88,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_spe/LifeBeforeHourai.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Cataclysm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Cataclysm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Combust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Combust.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonArmoury.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonArmoury.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonFlare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/DanceofFlames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/DanceofFlames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" afterDir="false" />
@@ -103,556 +103,56 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatVisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatVisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatVisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonanceReactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IcarusDive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IcarusDive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgneousBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgneousBlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IllusoryBattlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IllusoryBattlefield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImmortalDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImmortalDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/InfernalOverdrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/InfernalOverdrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Kindle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Kindle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImmortalDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Meltdown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/InfernalOverdrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ThermalPressure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Kindle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImperishableFlame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/PhoenixFeathers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/PhoenixFeathers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Refresh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Refresh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonatingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonatingBlast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonatingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RetainTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RetainTemperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarricade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarricade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarricade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarrier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ScorchedEarth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ScorchedEarth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ShiftIgnition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ShiftIgnition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SoaringPhoenixHourai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SoaringPhoenixHourai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SoaringPhoenixHourai.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SubterraneanCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SubterraneanCore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Trailblazer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Trailblazer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Wildfire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Wildfire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/characters/MKU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/characters/MKU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/mechanics/ImmortalityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/mechanics/ImmortalityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/CardCostModificationPatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/CardCostModificationPatches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/CardENUMs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/CardENUMs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/BurstMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/BurstMechanics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/VigorNonConsumable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/VigorNonConsumable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlareImpending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlareImpending.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlarePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/DuplicationPower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/general/ResonanceBurstPhaseValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/relics/BottledPlaceholderField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlareImpending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ImpendingCombustionPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SpontaneousHumanCombustionPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeatVisorPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeatVisorPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeatVisorPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonanceReactorPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HouraiForgePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HouraiForgePower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitionBarrierPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitionBarrierPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/OverheatPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/OverheatPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonatingAuraPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonatingAuraPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarricadePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarricadePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ScorchedEarthPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ScorchedEarthPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SilencedPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SilencedPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/PhoenixFormPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/PhoenixFormPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonatingBlastPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitionBlastPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarricadePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarrierPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SilencedPower.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/TrailblazerPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/TrailblazerPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/relics/PhoenixFeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/relics/PhoenixFeather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ExhaustionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ExhaustionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/MokouEnergyOrb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/MokouEnergyOrb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ResonanceBurst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ResonanceBurst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/CardInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/DrawInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/universal/CardHPLossHook.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/MokouTutorials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/MokouTutorials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/TextureLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/squeenyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BetterScreenOnFireEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BetterScreenOnFireEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisParticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/FireIgniteEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/FireIgniteEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/FireSplashEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/FireSplashEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/unique/FlameSlingEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/unique/FlameSlingEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/unique/ReverseFlameSlingEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/unique/ReverseFlameSlingEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/unique/SpellCardDeclarationVFX.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BetterGiantFireEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BetterGiantFireEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueFastSmokeParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueFastSmokeParticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueInflameEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueInflameEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/CasualFlameParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/CasualFlameParticleEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/RedFireBurstParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/RedFireBurstParticleEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/StraightFireParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/StraightFireParticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModTheSpire.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/audio/mku.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/1024/bg_attack_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/1024/bg_power_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/1024/bg_skill_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/1024/card_mokou_red_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/CardHPCostOrb.pdn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/CardHPCostOrb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/bg_attack_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/bg_power_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/bg_skill_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/card_mokou_red_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/512/card_small_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/Badge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/AdaptivePyromancy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/AdaptivePyromancy_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/BlueFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/BlueFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/BurningDraft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/BurningDraft_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Cataclysm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Cataclysm2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Cataclysm2_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Cataclysm_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Combust.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Combust_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ControlledCombustion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ControlledCombustion_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/CrimsonFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/CrimsonFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Defend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Defend_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Ember.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Ember_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/EternalBurstReactor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/EternalBurstReactor_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ExplosiveFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ExplosiveFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Extinguish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Extinguish_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Fireball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Fireball_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Firecracker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Firecracker_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlamingFireTalons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlamingFireTalons_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Flare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Flare1000Flame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Flare1000Flame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlareStarter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlareStarter_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Flare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlickeringFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FlickeringFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FujiyamaVolcano.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FujiyamaVolcano_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FusionFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/FusionFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/GeothermalAscension.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/GeothermalAscension_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatCyclone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatCyclone_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatFactory_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatSpark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatSpark_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatTransfer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/HeatTransfer_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IcarusDive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IcarusDive_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgneousBlow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgneousBlow_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgnitionBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgnitionBarrier_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgnitionFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/IgnitionFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ImperishableNight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ImperishableNight_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/InfernalWave.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/InfernalWave_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Kindle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Kindle_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Overheat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Overheat_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/PhoenixForm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/PhoenixForm_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Poggers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Poggers_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ProfanedFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ProfanedFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/RadiantBlade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/RadiantBlade_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ResoluteFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ResoluteFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/RoaringFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/RoaringFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Scorch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Scorch_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ScorchedEarth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ScorchedEarth_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ScorchingColumn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/ScorchingColumn_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Sear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Sear_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingBlow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingBlow_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingShot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SearingShot_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Singe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Singe_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SoaringPhoenixHourai.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SoaringPhoenixHourai_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SpontaneousHumanCombustion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/SpontaneousHumanCombustion_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/TemporalFireSeal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/TemporalFireSeal_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/UncontrollableSolarReaction.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/UncontrollableSolarReaction_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Ventilation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/Ventilation_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/VolatileScorchingBlast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/VolatileScorchingBlast_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/WilloWisp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/cards/WilloWisp_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Intro/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/RealIdle/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Spell/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Spell/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Spell/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Spell/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Spell/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/Win/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/mokouanim.autosave.scml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/Spriter/mokouanim.scml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/corpse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/main2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/CardHPCost.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/EnergyRecharge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/bvfx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer1d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer2d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer3d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer4d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer5d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layer6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/layerFake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/vfx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/vfx_bak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/orb/vfx_bak2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/shoulder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/char/mokou/shoulder2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/Button.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/PortraitBG.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/Untitled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/Untitlled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/mokouButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/mokouPortraitBG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/charSelect/small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/BMoon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/Glow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/MKU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/Moon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/Sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/Star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/Sun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/crit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/crit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/spellBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/spellbackground_rotating.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/spellbackground_static.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/spellcard_text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/effects/spellcircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/events/Events.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/events/IdentityCrisisEvent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/events/IdentityCrisisEvent2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/orbs/default_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/Combustion32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/Combustion84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/Icon_FlameBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/bf32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/bf84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/phoenix_stance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/placeholder_power.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/placeholder_power32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/powers/placeholder_power84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/BottledPlaceholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/Relics.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/default_clickable_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/outline/BottledPlaceholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/outline/default_clickable_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/outline/phoenix_feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/outline/placeholder_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/outline/placeholder_relic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/phoenix_feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/placeholder_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/relics/placeholder_relic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/missing_texture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/tip/TEST.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/tip/t1.pdn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/tip/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/tip/t1a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/images/ui/tip/t1b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/cards.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/character.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/keywords.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/powers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/relics.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/tutorial.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MokouModResources/localization/eng/ui.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/antrun/build-main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IDCheckStringsDONT-EDIT-AT-ALL.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/audio/mku.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/1024/bg_attack_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/1024/bg_power_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/1024/bg_skill_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/1024/card_mokou_red_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/CardHPCostOrb.pdn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/CardHPCostOrb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/bg_attack_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/bg_power_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/bg_skill_mokou_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/card_mokou_red_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/512/card_small_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/Badge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/AdaptivePyromancy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/AdaptivePyromancy_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/BlueFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/BlueFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/BurningDraft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/BurningDraft_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Cataclysm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Cataclysm2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Cataclysm2_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Cataclysm_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Combust.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Combust_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ControlledCombustion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ControlledCombustion_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/CrimsonFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/CrimsonFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Defend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Defend_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Ember.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Ember_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/EternalBurstReactor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/EternalBurstReactor_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ExplosiveFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ExplosiveFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Extinguish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Extinguish_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Fireball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Fireball_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Firecracker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Firecracker_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlamingFireTalons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlamingFireTalons_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Flare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Flare1000Flame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Flare1000Flame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlareStarter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlareStarter_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Flare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlickeringFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FlickeringFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FujiyamaVolcano.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FujiyamaVolcano_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FusionFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/FusionFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/GeothermalAscension.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/GeothermalAscension_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatCyclone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatCyclone_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatFactory_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatSpark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatSpark_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatTransfer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/HeatTransfer_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IcarusDive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IcarusDive_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgneousBlow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgneousBlow_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgnitionBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgnitionBarrier_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgnitionFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/IgnitionFlare_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ImperishableNight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ImperishableNight_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/InfernalWave.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/InfernalWave_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Kindle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Kindle_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Overheat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Overheat_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/PhoenixForm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/PhoenixForm_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Poggers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Poggers_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ProfanedFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ProfanedFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/RadiantBlade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/RadiantBlade_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ResoluteFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ResoluteFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/RoaringFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/RoaringFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Scorch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Scorch_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ScorchedEarth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ScorchedEarth_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ScorchingColumn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/ScorchingColumn_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Sear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Sear_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingBlow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingBlow_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingFlame_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingShot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SearingShot_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Singe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Singe_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SoaringPhoenixHourai.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SoaringPhoenixHourai_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SpontaneousHumanCombustion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/SpontaneousHumanCombustion_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/TemporalFireSeal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/TemporalFireSeal_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/UncontrollableSolarReaction.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/UncontrollableSolarReaction_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Ventilation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/Ventilation_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/VolatileScorchingBlast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/VolatileScorchingBlast_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/WilloWisp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/cards/WilloWisp_p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Intro/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/RealIdle/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Spell/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Spell/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Spell/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Spell/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Spell/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/Win/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/mokouanim.autosave.scml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/Spriter/mokouanim.scml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/corpse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/main2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/CardHPCost.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/EnergyRecharge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/bvfx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer1d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer2d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer3d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer4d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer5d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layer6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/layerFake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/vfx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/vfx_bak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/orb/vfx_bak2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/shoulder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/char/mokou/shoulder2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/Button.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/PortraitBG.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/Untitled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/Untitlled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/mokouButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/mokouPortraitBG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/charSelect/small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/BMoon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/Glow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/MKU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/Moon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/Sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/Star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/Sun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/crit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/crit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/spellBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/spellbackground_rotating.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/spellbackground_static.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/spellcard_text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/effects/spellcircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/events/Events.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/events/IdentityCrisisEvent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/events/IdentityCrisisEvent2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/orbs/default_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/Combustion32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/Combustion84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/Icon_FlameBarrier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/bf32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/bf84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/phoenix_stance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/placeholder_power.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/placeholder_power32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/powers/placeholder_power84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/BottledPlaceholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/Relics.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/default_clickable_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/outline/BottledPlaceholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/outline/default_clickable_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/outline/phoenix_feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/outline/placeholder_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/outline/placeholder_relic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/phoenix_feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/placeholder_relic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/relics/placeholder_relic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/missing_texture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/tip/TEST.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/tip/t1.pdn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/tip/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/tip/t1a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/images/ui/tip/t1b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/cards.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/character.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/keywords.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/powers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/relics.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/tutorial.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MokouModResources/localization/eng/ui.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -672,6 +172,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -698,8 +203,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn package" />
       <command value="mvn clean" />
+      <command value="mvn package" />
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -720,52 +225,53 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591305339582" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1591447909929">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1591885417642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591447909929" />
-    <state x="756" y="404" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591290930149">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="756" y="404" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591290930149" />
-    <state x="2610" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591454638848">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591885417642" />
+    <state x="2676" y="420" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591721886936">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1589135885544" />
-    <state x="2610" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591454638848" />
-    <state x="774" y="267" key="FileChooserDialogImpl" timestamp="1590956919031">
+    <state x="756" y="404" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591644536157" />
+    <state x="2676" y="420" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591721886936" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591897657421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="774" y="267" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1590956919031" />
-    <state width="1638" height="261" key="GridCell.Tab.0.bottom" timestamp="1591464223716">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591897657421" />
+    <state x="2610" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591647700697" />
+    <state x="774" y="267" key="FileChooserDialogImpl" timestamp="1591719079275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1638" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591464223716" />
-    <state width="1638" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458912720" />
-    <state width="1638" height="261" key="GridCell.Tab.0.center" timestamp="1591464223716">
+    <state x="774" y="267" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591719079275" />
+    <state width="937" height="266" key="GridCell.Tab.0.bottom" timestamp="1592051549748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1638" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591464223716" />
-    <state width="1638" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458912720" />
-    <state width="1638" height="261" key="GridCell.Tab.0.left" timestamp="1591464223716">
+    <state width="937" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="937" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
+    <state width="937" height="266" key="GridCell.Tab.0.center" timestamp="1592051549748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1638" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591464223716" />
-    <state width="1638" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458912720" />
-    <state width="1638" height="261" key="GridCell.Tab.0.right" timestamp="1591464223716">
+    <state width="937" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="937" height="254" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
+    <state width="937" height="266" key="GridCell.Tab.0.left" timestamp="1592051549748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1638" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591464223716" />
-    <state width="1638" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458912720" />
+    <state width="937" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="937" height="254" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
+    <state width="937" height="266" key="GridCell.Tab.0.right" timestamp="1592051549748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="937" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="937" height="254" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1589121219646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1589121219646" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1591269635052">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1592041178615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591269635052" />
-    <state x="2576" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590854517875" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592041178615" />
+    <state x="2576" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591683557739" />
     <state x="598" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588086257254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -774,16 +280,16 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2100" y="48" width="1064" height="738" key="dock-window-1/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591352759362" />
-    <state x="2866" y="268" width="843" height="630" key="find.popup" timestamp="1591458592707">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="549" y="250" width="843" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591458499817" />
-    <state x="2866" y="268" width="843" height="630" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458592707" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1591464226748">
+    <state x="549" y="250" width="1140" height="606" key="find.popup" timestamp="1592039903092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591464226748" />
-    <state x="2536" y="249" width="672" height="704" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458912730" />
+    <state x="549" y="250" width="1140" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592039903092" />
+    <state x="2866" y="268" width="843" height="630" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458592707" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1592051540090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051540090" />
+    <state x="2536" y="249" width="672" height="704" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373117" />
     <state x="484" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1591270091666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

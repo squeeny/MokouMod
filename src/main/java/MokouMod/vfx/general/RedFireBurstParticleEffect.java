@@ -1,6 +1,6 @@
 package MokouMod.vfx.general;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class RedFireBurstParticleEffect extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
@@ -34,7 +33,7 @@ public class RedFireBurstParticleEffect extends AbstractGameEffect {
         this.duration = MathUtils.random(0.5F, DUR);
         this.x = x - (float) (this.img.packedWidth / 2);
         this.y = y - (float) (this.img.packedHeight / 2);
-        if(p().hasPower(BlueFlarePower.POWER_ID)) { this.color = new Color(MathUtils.random(0.1F, 0.3F), MathUtils.random(0.2F, 0.4F), MathUtils.random(0.7F, 1.0F), 0.0F); }
+        if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { this.color = new Color(MathUtils.random(0.1F, 0.3F), MathUtils.random(0.2F, 0.4F), MathUtils.random(0.7F, 1.0F), 0.0F); }
         else{ this.color = new Color(MathUtils.random(0.7F, 1.0F), MathUtils.random(0.2F, 0.4F), MathUtils.random(0.1F, 0.3F), 0.0F); }
         this.color.a = 0.0F;
         this.rotation = MathUtils.random(-10.0F, 10.0F);

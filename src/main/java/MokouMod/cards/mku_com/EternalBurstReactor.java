@@ -1,7 +1,10 @@
 package MokouMod.cards.mku_com;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.cards.mku_rar.ResonatingAura;
 import MokouMod.patches.combat.BurstMechanics;
+import MokouMod.patches.combat.ResonanceMechanics;
+import MokouMod.powers.ResonatingAuraPower;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -21,8 +24,7 @@ public class EternalBurstReactor extends abs_mku_card {
             CardTarget.ENEMY
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final int DMG = 1;
+    private static final int DMG = 2;
     private static final int UPG_DMG = 2;
     public EternalBurstReactor() {
         super(cardInfo, false);
@@ -36,25 +38,14 @@ public class EternalBurstReactor extends abs_mku_card {
     }
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        animationHandler(this);
-        int burstCount = 0;
-        for (int i = 0; i <= BurstMechanics.PlayerBurstField.turnBurstAmount.get(p()) - 1; i += 1) { burstCount++; }
-        this.magicNumber = burstCount - 1;
-        calculateCardDamage(m);
-        for (int i = 0; i <= BurstMechanics.PlayerBurstField.turnBurstAmount.get(p()) - 1; i += 1){ doDmg(m, this.damage, AbstractGameAction.AttackEffect.BLUNT_LIGHT); }
-        if(this.overheated){
-            for (int i = 0; i <= BurstMechanics.PlayerBurstField.turnBurstAmount.get(p()) - 1; i += 1){ atb(new DrawCardAction(1)); }
-
-        }
+        for (int i = 0; i <= ResonanceMechanics.resonanceTurnAmount.get(p()) - 1; i++){ doDmg(m, this.damage, AbstractGameAction.AttackEffect.BLUNT_LIGHT); }
+        if(this.overheated){ for (int i = 0; i <= ResonanceMechanics.resonanceTurnAmount.get(p()) - 1; i++){ atb(new DrawCardAction(1)); } }
     }
     public void applyPowers() {
-        int burstCount = 0;
-        for (int i = 0; i <= BurstMechanics.PlayerBurstField.turnBurstAmount.get(p()) - 1; i += 1){ burstCount++; }
-        if (burstCount <= 0) { this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[1]; }
-        if (burstCount > 0) {
-            this.magicNumber = this.baseMagicNumber = burstCount;
-            super.applyPowers();
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[1];
+        super.applyPowers();
+        if (ResonanceMechanics.resonanceTurnAmount.get(p()) > 0) {
+            this.magicNumber = this.baseMagicNumber = ResonanceMechanics.resonanceTurnAmount.get(p());
+            this.rawDescription = cardStrings.DESCRIPTION + (this.magicNumber == 1 ? cardStrings.EXTENDED_DESCRIPTION[1] : cardStrings.EXTENDED_DESCRIPTION[2]);
             initializeDescription();
         }
     }
@@ -62,10 +53,5 @@ public class EternalBurstReactor extends abs_mku_card {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
-        initializeDescription();
-    }
+    public void calculateCardDamage(AbstractMonster mo) { super.calculateCardDamage(mo); }
 }

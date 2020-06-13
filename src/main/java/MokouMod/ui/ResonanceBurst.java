@@ -1,10 +1,8 @@
 package MokouMod.ui;
 
-import MokouMod.actions.AddOverheatAction;
 import MokouMod.interfaces.onGainOverheatSubscriber;
-import MokouMod.patches.general.ResonanceBurstPhaseValue;
-import MokouMod.powers.BlueFlarePower;
-import MokouMod.powers.HouraiForgePower;
+import MokouMod.patches.combat.ResonanceMechanics;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import MokouMod.powers.OverheatPower;
 import MokouMod.powers.PhoenixFormPower;
 import MokouMod.twitch.SlayTheRelicsIntegration;
@@ -14,7 +12,6 @@ import MokouMod.vfx.general.CasualFlameParticleEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,7 +27,6 @@ import java.util.ArrayList;
 
 import static MokouMod.MokouMod.makeID;
 import static MokouMod.MokouMod.tackybypass;
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class ResonanceBurst {
 
@@ -65,7 +61,7 @@ public class ResonanceBurst {
         tips.add(tooltip);
         updateTooltip();
     }
-    public void reset(int initialPhase) {
+    public void reset() {
         renderColor.a = 0.0f;
         updateTooltip();
     }
@@ -73,26 +69,23 @@ public class ResonanceBurst {
     {
         renderColor.a = 0.0f;
     }
-    public void updateTooltip() { if (p() != null) { tooltip.body = TEXT[1] + ResonanceBurstPhaseValue.resonanceburstPhase.get(p()) + TEXT[2] + ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p()) + TEXT[3]; } }
+    public void updateTooltip() { if (p() != null) { tooltip.body = String.format(TEXT[1], ResonanceMechanics.resonanceburstPhase.get(p()), ResonanceMechanics.maxResonanceBurstPhase.get(p())); } }
     public void render(SpriteBatch sb, boolean fading) {
         if (renderColor.a > 0.0f || !fading) {
             hitbox.update();
             if (hitbox.hovered) { TipHelper.queuePowerTips(TEXT_X - 150 * Settings.scale, TEXT_Y - 80.0F * Settings.scale, this.tips); }
-            if (tackybypass && ResonanceBurstPhaseValue.resonanceburstPhase.get(p()) == ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p())) {
+            if (tackybypass && ResonanceMechanics.resonanceburstPhase.get(p()) == ResonanceMechanics.maxResonanceBurstPhase.get(p())) {
                 tackybypass = false;
                 doVfx(new BlueInflameEffect(p()));
                 doPow(p(), new OverheatPower(p(), 1));
                 for(AbstractPower p : p().powers){
-                    ((onGainOverheatSubscriber) p).onGainOverheat();
+                    if(p instanceof onGainOverheatSubscriber){ ((onGainOverheatSubscriber) p).onGainOverheat();}
                 }
-                if(p().hasPower(HouraiForgePower.POWER_ID)){
-                    atb(new ArmamentsAction(true));
-                }
-                atb(new AddOverheatAction());
-                int x = ResonanceBurstPhaseValue.resonanceburstPhase.get(p());
+                int x = ResonanceMechanics.resonanceburstPhase.get(p());
                 if(p().hasPower(PhoenixFormPower.POWER_ID)){ x = x / 2; }
                 else { x = 0; }
-                ResonanceBurstPhaseValue.resonanceburstPhase.set(p(), x);
+                ResonanceMechanics.resonanceburstPhase.set(p(), x);
+                tackybypass = true;
                 updateTooltip();
             }
             if (AbstractDungeon.floorNum != roomLastRendered) {
@@ -109,7 +102,7 @@ public class ResonanceBurst {
             for (AbstractGameEffect e : flameEffects) { e.render(sb); }
             for (AbstractGameEffect e : baseEffects) { e.update(); }
             for (AbstractGameEffect e : flameEffects) { e.update(); }
-            targetCount = ResonanceBurstPhaseValue.resonanceburstPhase.get(p()) / 2;
+            targetCount = ResonanceMechanics.resonanceburstPhase.get(p()) / 2;
             baseEffects.removeIf((e) -> e.isDone);
             flameEffects.removeIf((e) -> e.isDone);
             calmFireCooldown -= Gdx.graphics.getRawDeltaTime();
@@ -117,10 +110,10 @@ public class ResonanceBurst {
             for (int i = 0; i < max; i++) { flameEffects.add(new CasualFlameParticleEffect(POSITION_X + POSITION_OFFSET, POSITION_Y + POSITION_OFFSET - 30F )); }
             if (calmFireCooldown < 0) {
                 calmFireCooldown += CD;
-                if(p().hasPower(BlueFlarePower.POWER_ID)) { baseEffects.add(new CalmFireEffect(POSITION_X + POSITION_OFFSET, POSITION_Y + POSITION_OFFSET, Color.TEAL)); }
+                if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { baseEffects.add(new CalmFireEffect(POSITION_X + POSITION_OFFSET, POSITION_Y + POSITION_OFFSET, Color.TEAL)); }
                 else { baseEffects.add(new CalmFireEffect(POSITION_X + POSITION_OFFSET, POSITION_Y + POSITION_OFFSET, Color.ORANGE)); }
             }
-            FontHelper.renderFontCentered(sb, FontHelper.topPanelAmountFont, Integer.toString(ResonanceBurstPhaseValue.resonanceburstPhase.get(p())), TEXT_X, TEXT_Y, renderColor);
+            FontHelper.renderFontCentered(sb, FontHelper.topPanelAmountFont, Integer.toString(ResonanceMechanics.resonanceburstPhase.get(p())), TEXT_X, TEXT_Y, renderColor);
             SlayTheRelicsIntegration.renderTipHitbox(hitbox, tips);
         }
     }

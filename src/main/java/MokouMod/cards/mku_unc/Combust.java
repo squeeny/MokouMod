@@ -1,16 +1,17 @@
 package MokouMod.cards.mku_unc;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.patches.combat.BurstMechanics;
 import MokouMod.powers.IgnitePower;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 import static MokouMod.MokouMod.makeID;
-import static Utilities.squeenyUtils.doDmg;
-import static Utilities.squeenyUtils.doVfx;
+import static Utilities.squeenyUtils.*;
 import static com.megacrit.cardcrawl.relics.CharonsAshes.DMG;
 
 public class Combust extends abs_mku_card {
@@ -21,7 +22,7 @@ public class Combust extends abs_mku_card {
             CardTarget.ENEMY
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int DNG = 7;
+    private static final int DMG = 7;
     private static final int UPG_DMG = 3;
     public Combust() {
         super(cardInfo, false);
@@ -30,11 +31,15 @@ public class Combust extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.hasPower(IgnitePower.POWER_ID)) {
-            doVfx(new WeightyImpactEffect(m.hb.cX, m.hb.cY));
+        if (m.hasPower(IgnitePower.POWER_ID)) { doVfx(new WeightyImpactEffect(m.hb.cX, m.hb.cY)); }
+        doDmg(m, this.damage, AbstractGameAction.AttackEffect.NONE);
+    }
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        if(mo.hasPower(IgnitePower.POWER_ID)){
             this.damage = (int) (this.damage * 1.5F);
             if(this.overheated){ this.damage = (int) (this.damage * 1.5F); }
-            doDmg(m, this.damage, AbstractGameAction.AttackEffect.NONE);
-        } else { doDmg(m, this.damage, AbstractGameAction.AttackEffect.BLUNT_HEAVY); }
+            isDamageModified = true;
+        }
     }
 }

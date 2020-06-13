@@ -43,9 +43,9 @@ public class MokouTutorials extends FtueTip {
 
     public MokouTutorials() {
 
-        this.img1 = ImageMaster.loadImage("MokouModResources/images/ui/tip/t1.png");
-        this.img2 = ImageMaster.loadImage("MokouModResources/images/ui/tip/t1a.png");
-        this.img3 = ImageMaster.loadImage("MokouModResources/images/ui/tip/t1b.png");
+        this.img1 = ImageMaster.loadImage("CapriCoreResources/images/MokouMod/ui/tip/t1.png");
+        this.img2 = ImageMaster.loadImage("CapriCoreResources/images/MokouMod/ui/tip/t1a.png");
+        this.img3 = ImageMaster.loadImage("CapriCoreResources/images/MokouMod/ui/tip/t1b.png");
 
         txt1 = txt[0];
         txt2 = txt[1];

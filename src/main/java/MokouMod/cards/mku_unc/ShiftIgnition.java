@@ -4,6 +4,7 @@ import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.powers.IgnitePower;
 import MokouMod.vfx.combat.unique.FlameSlingEffect;
 import Utilities.CardInfo;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.TriggerMarksAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -30,6 +31,9 @@ public class ShiftIgnition extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doVfx(new FlameSlingEffect(p.drawX, p.drawY+(p.hb_h/2f), m.drawX, m.drawY+(m.hb_h/2f)));
         doPow(m, new IgnitePower(m, this.damage));
-        if (this.overheated){ atb(new TriggerMarksAction(this)); }
+        if (this.overheated){
+            atb(new WaitAction(0.01F));
+            atb(new TriggerMarksAction(this));
+        }
     }
 }

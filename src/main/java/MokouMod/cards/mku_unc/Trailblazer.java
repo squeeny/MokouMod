@@ -12,7 +12,7 @@ public class Trailblazer extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             Trailblazer.class.getSimpleName(),
             COSTS[1],
-            CardType.POWER,
+            CardType.SKILL,
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
@@ -24,10 +24,7 @@ public class Trailblazer extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        doPow(p, new TrailblazerPower(p, this.magicNumber));
-        if (this.overheated) {
-            doPow(p, new TrailblazerPower(p, this.magicNumber));
-
-        }
+        doPow(p, new TrailblazerPower(p));
+        if (this.overheated) { doPow(p, new TrailblazerPower(p)); }
     }
 }

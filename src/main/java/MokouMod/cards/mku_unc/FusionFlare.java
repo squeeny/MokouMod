@@ -1,17 +1,18 @@
 package MokouMod.cards.mku_unc;
 
-import MokouMod.actions.ProfanedFlameAction;
+import MokouMod.actions.EnhanceBurstAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.patches.cards.CardENUMs;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static MokouMod.MokouMod.makeID;
-import static Utilities.squeenyUtils.atb;
-import static Utilities.squeenyUtils.doDmg;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
+import static Utilities.squeenyUtils.*;
+
 public class FusionFlare extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             FusionFlare.class.getSimpleName(),
@@ -20,21 +21,22 @@ public class FusionFlare extends abs_mku_card {
             CardTarget.ENEMY
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int DMG = 20;
+    private static final int DMG = 15;
     private static final int UPG_DMG = 5;
+    private static final int OVERHEAT_UPG = 2;
+    private static final int UPG_OVERHEAT_UPG = 1;
     public FusionFlare() {
         super(cardInfo, false);
         setDamage(DMG, UPG_DMG);
+        setMagic(OVERHEAT_UPG, UPG_OVERHEAT_UPG);
+        setBurst(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
-        if(AbstractDungeon.actionManager.lastCard.name.toLowerCase().contains("flare")){ doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }
-        if(this.overheated){ atb(new ProfanedFlameAction(this.damage, true, false)); }
-    }
-    @Override
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.actionManager.lastCard.name.toLowerCase().contains("flare")){ this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy(); }
-        else{ this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy(); }
+        if(anonymouscheckBurst()){ doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }
+        if(this.overheated){
+            this.baseDamage += this.magicNumber;
+            atb(new EnhanceBurstAction(this.magicNumber)); }
     }
 }

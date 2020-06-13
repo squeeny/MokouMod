@@ -1,6 +1,6 @@
 package MokouMod.cards.mku_rar;
 
-import MokouMod.actions.EnchantingBambooForestAction;
+import MokouMod.actions.ForestOfTheLostAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,15 +16,15 @@ public class EnchantingBambooForest extends abs_mku_card {
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int UPG_COST = 2;
     private static final int COST_DECREASE = 1;
     public EnchantingBambooForest() {
         super(cardInfo, false);
-        setCostUpgrade(UPG_COST);
+        setCostUpgrade(COSTS[2]);
+        setMagic(COST_DECREASE);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new EnchantingBambooForestAction(COST_DECREASE));
-        if(this.overheated){ atb(new EnchantingBambooForestAction(COST_DECREASE)); }
+        atb(new ForestOfTheLostAction(this.magicNumber));
+        if(this.overheated){ atb(new ForestOfTheLostAction(this.magicNumber)); }
     }
 }

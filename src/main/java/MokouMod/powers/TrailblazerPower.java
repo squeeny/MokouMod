@@ -15,20 +15,16 @@ public class TrailblazerPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public TrailblazerPower(AbstractCreature owner, int amount) {
+    public TrailblazerPower(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
         type = AbstractPower.PowerType.BUFF;
         updateDescription();
         isTurnBased = true;
         loadRegion("flameBarrier");
     }
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer){ atb(new ReducePowerAction(this.owner, this.owner, this, 1)); }
-    }
-    @Override
-    public void updateDescription() { this.description = this.amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], this.amount - 1); }
+    public void updateDescription() { this.description =  DESCRIPTIONS[0]; }
 }

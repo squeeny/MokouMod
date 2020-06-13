@@ -23,18 +23,20 @@ public class Ember extends abs_mku_card {
     private static final int DMG = 7;
     private static final int UPG_DMG = 3;
     private static final int IGNITE = 3;
-    private static final int UPG_IGNITE = 2;
+    private static final int UPG_IGNITE = 1;
     public Ember() {
         super(cardInfo, false);
         setDamage(DMG, UPG_DMG);
         setMagic(IGNITE, UPG_IGNITE);
+        setMokouMagic(IGNITE * 2, UPG_IGNITE * 2);
         setIgnite(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         doPow(m, new IgnitePower(m, this.magicNumber));
-        if(this.overheated){ doPow(p, new IgnitePower(p, this.magicNumber)); }
+        if(!m.hasPower(IgnitePower.POWER_ID)){ doPow(m, new IgnitePower(m, this.magicNumber)); }
+        if(this.overheated){
+            doPow(p, new IgnitePower(p, this.mokouSecondMagicNumber)); }
     }
 }

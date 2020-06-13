@@ -4,6 +4,7 @@ import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.util.mokouUtils;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,17 +24,18 @@ public class Firecracker extends abs_mku_card {
     private static final int UPG_BLOCK = 3;
     private static final int DRAW = 2;
     private static final int UPG_DRAW = 1;
+    private static final int ENERGY = 2;
     public Firecracker() {
         super(cardInfo, false);
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(DRAW, UPG_DRAW);
+        setMokouMagic(ENERGY);
         setBurst(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDef(this.block);
         if (mokouUtils.anonymouscheckBurst()) { atb(new DrawCardAction(p(), DRAW)); }
-        if(this.overheated){ doDef(this.block); }
+        if(this.overheated){ atb(new GainEnergyAction(this.mokouSecondMagicNumber)); }
     }
 }

@@ -13,7 +13,7 @@ public class RetainTemperature extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             RetainTemperature.class.getSimpleName(),
             COSTS[1],
-            CardType.POWER,
+            CardType.SKILL,
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
@@ -30,6 +30,7 @@ public class RetainTemperature extends abs_mku_card {
         doPow(p, new VigorPower(p, this.mokouSecondMagicNumber));
         doPow(p, new RetainTemperaturePower(p, this.magicNumber));
         if(this.overheated){
+            doPow(p, new VigorPower(p, this.mokouSecondMagicNumber));
             doPow(p, new RetainTemperaturePower(p, this.magicNumber));
         }
     }

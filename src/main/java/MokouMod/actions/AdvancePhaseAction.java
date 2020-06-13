@@ -3,11 +3,11 @@ package MokouMod.actions;
 import MokouMod.MokouMod;
 import MokouMod.characters.MKU;
 import MokouMod.interfaces.onGainResonanceSubscriber;
-import MokouMod.patches.general.ResonanceBurstPhaseValue;
+import MokouMod.patches.combat.ResonanceMechanics;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 
 public class AdvancePhaseAction extends AbstractGameAction {
@@ -24,18 +24,17 @@ public class AdvancePhaseAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int newValue = ResonanceBurstPhaseValue.resonanceburstPhase.get(p()) + this.amount;
+        int newValue = ResonanceMechanics.resonanceburstPhase.get(p()) + this.amount;
         if (newValue < 0) { newValue = 0; }
-        if (newValue > ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p())) { newValue = ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p()); }
-        ResonanceBurstPhaseValue.resonanceburstPhase.set(p(), newValue);
+        if (newValue > ResonanceMechanics.maxResonanceBurstPhase.get(p())) { newValue = ResonanceMechanics.maxResonanceBurstPhase.get(p()); }
+        ResonanceMechanics.resonanceburstPhase.set(p(), newValue);
         MokouMod.resonanceBurst.updateTooltip();
-        if(ResonanceBurstPhaseValue.resonanceburstPhase.get(p()) != ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p())) {
-            for (int i = 0; i <= this.amount; i += 1) {
-                if(p() instanceof MKU) { att(new FlameSlingPhaseIncAction()); }
-            }
+        if(ResonanceMechanics.resonanceburstPhase.get(p()) != ResonanceMechanics.maxResonanceBurstPhase.get(p())) {
+            if(p() instanceof MKU) { att(new FlameSlingPhaseIncAction()); }
         }
+        ResonanceMechanics.resonanceTurnAmount.set(p(), ResonanceMechanics.resonanceTurnAmount.get(p()) + this.amount);
         for(AbstractPower p : p().powers){
-            if(resonatingAura){ ((onGainResonanceSubscriber) p).onGainResonance(); }
+            if(resonatingAura && p instanceof onGainResonanceSubscriber){ ((onGainResonanceSubscriber) p).onGainResonance(); }
         }
         this.isDone = true;
     }

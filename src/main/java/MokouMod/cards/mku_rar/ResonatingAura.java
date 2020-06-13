@@ -4,7 +4,7 @@ import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.actions.FlameSlingPhaseIncAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.characters.MKU;
-import MokouMod.patches.general.ResonanceBurstPhaseValue;
+import MokouMod.patches.combat.ResonanceMechanics;
 import MokouMod.powers.ResonatingAuraPower;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +25,6 @@ public class ResonatingAura extends abs_mku_card {
     public ResonatingAura() {
         super(cardInfo, false);
         setMagic(RESONANCE);
-        setIgnite(true);
         setInnate(false, true);
     }
     @Override
@@ -33,7 +32,7 @@ public class ResonatingAura extends abs_mku_card {
         doPow(p, new ResonatingAuraPower(p, this.magicNumber));
         if(this.overheated) {
             if (p instanceof MKU) { atb(new FlameSlingPhaseIncAction()); }
-            atb(new AdvancePhaseAction(ResonanceBurstPhaseValue.maxResonanceBurstPhase.get(p)));
+            atb(new AdvancePhaseAction(ResonanceMechanics.maxResonanceBurstPhase.get(p)));
         }
     }
 }

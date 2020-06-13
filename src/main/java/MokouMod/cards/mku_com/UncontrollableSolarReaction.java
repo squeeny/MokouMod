@@ -25,10 +25,8 @@ public class UncontrollableSolarReaction extends abs_mku_card {
             CardTarget.ENEMY
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final int DMG = 14;
     private static final int UPG_DMG = 4;
-
     public UncontrollableSolarReaction() {
         super(cardInfo, false);
         setDamage(DMG, UPG_DMG);
@@ -36,14 +34,11 @@ public class UncontrollableSolarReaction extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
-        if(this.overheated){
-            atb(new IgneousBlowAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
-
-        }
+        if(this.overheated){ atb(new IgneousBlowAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn))); }
         else{
             doVfx(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F);
-            doDmg(m, this.damage, AbstractGameAction.AttackEffect.NONE); }
+            doDmg(m, this.damage, AbstractGameAction.AttackEffect.NONE);
+        }
     }
     @Override
     public void triggerOnGlowCheck() {

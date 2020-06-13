@@ -1,6 +1,7 @@
 package MokouMod.cards.mku_rar;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.interfaces.onBurstSubscriber;
 import MokouMod.vfx.combat.BlueSearingBlowEffect;
 import Utilities.CardInfo;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
@@ -12,7 +13,7 @@ import static MokouMod.MokouMod.makeID;
 import static Utilities.squeenyUtils.doDmg;
 import static Utilities.squeenyUtils.doVfx;
 
-public class SearingBlow extends abs_mku_card {
+public class SearingBlow extends abs_mku_card implements onBurstSubscriber {
     private final static CardInfo cardInfo = new CardInfo(
             SearingBlow.class.getSimpleName(),
             COSTS[2],
@@ -22,15 +23,13 @@ public class SearingBlow extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     private static final int DMG = 10;
     private static final int UPG_DMG = 4;
-    public boolean upgradeable;
-
+    public static boolean upgradeable;
     public SearingBlow() { this(0, true); }
     public SearingBlow(int upgrades, boolean upgradeable) {
         super(cardInfo, false);
         setDamage(DMG);
         this.upgradeable = upgradeable;
         this.timesUpgraded = upgrades;
-        setBurst(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -38,14 +37,11 @@ public class SearingBlow extends abs_mku_card {
         doVfx(new BlueSearingBlowEffect(m.hb.cX, m.hb.cY, this.timesUpgraded), 0.2F);
         doDmg(m, this.damage);
         if(this.overheated){
-            StSLib.getMasterDeckEquivalent(this).upgrade();
+            if(StSLib.getMasterDeckEquivalent(this) != null){ StSLib.getMasterDeckEquivalent(this).upgrade(); }
             if (this.canUpgrade()) { this.upgrade(); }
-            //addToBot(new VFXAction(new UpgradeShineEffect(Settings.WIDTH/2f, Settings.HEIGHT/2f)));
         }
     }
-
     public boolean canUpgrade() { return true; }
-
     @Override
     public void upgrade() {
         upgradeDamage(UPG_DMG + this.timesUpgraded);
@@ -54,10 +50,13 @@ public class SearingBlow extends abs_mku_card {
         this.name = cardStrings.NAME + "+" + this.timesUpgraded;
         initializeTitle();
     }
-
     @Override
     public AbstractCard makeCopy() {
          return new SearingBlow(this.timesUpgraded, this.upgradeable);
     }
-
+    @Override
+    public void onBurst() {
+        if(this.upgradeable){ this.upgrade(); }
+        else { this.upgradeable = true; }
+    }
 }

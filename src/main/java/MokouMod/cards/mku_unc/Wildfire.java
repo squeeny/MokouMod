@@ -26,9 +26,6 @@ public class Wildfire extends abs_mku_card {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         atb(new FetchIgniteCardAction(this.magicNumber));
-        if(this.overheated){
-            atb(new FetchIgniteCardAction(1));
-
-        }
+        if(this.overheated){ atb(new FetchIgniteCardAction(this.magicNumber)); }
     }
 }

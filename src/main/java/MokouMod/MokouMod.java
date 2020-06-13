@@ -1,10 +1,13 @@
 package MokouMod;
 
-import MokouMod.actions.CheckBurstAction;
+import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.actions.MessageCaller;
 import MokouMod.characters.MKU;
+import MokouMod.mechanics.ImmortalityManager;
+import MokouMod.patches.cards.CardENUMs;
 import MokouMod.patches.combat.BurstMechanics;
-import MokouMod.patches.general.ResonanceBurstPhaseValue;
+import MokouMod.patches.combat.ResonanceMechanics;
+import MokouMod.powers.OverheatPower;
 import MokouMod.relics.PhoenixFeather;
 import MokouMod.ui.ResonanceBurst;
 import MokouMod.util.IDCheckDontTouchPls;
@@ -15,20 +18,22 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -51,10 +56,10 @@ public class MokouMod implements
         EditCharactersSubscriber,
         PostInitializeSubscriber,
         OnStartBattleSubscriber,
-        OnCardUseSubscriber,
         PreRoomRenderSubscriber,
         PostBattleSubscriber,
-        PreStartGameSubscriber {
+        PreStartGameSubscriber,
+        StartActSubscriber{
     public static final Logger logger = LogManager.getLogger(MokouMod.class.getName());
     private static String modID;
     public static boolean[] activeTutorials = new boolean[]{true};
@@ -62,6 +67,7 @@ public class MokouMod implements
     public static ResonanceBurst resonanceBurst;
     public static boolean drawResonanceBurstUI = false;
     public static Properties MokouModDefaultSettings = new Properties();
+
     private static final String MODNAME = "MokouMod";
     private static final String AUTHOR = "squeeny";
     private static final String DESCRIPTION = "Fujiwara no Mokou joins Slay The Spire!";
@@ -81,6 +87,9 @@ public class MokouMod implements
     public static final String MKU_SHOULDER_2 = "CapriCoreResources/images/MokouMod/char/mokou/shoulder2.png";
     public static final String MKU_CORPSE = "CapriCoreResources/images/MokouMod/char/mokou/corpse.png";
     public static final String BADGE_IMAGE = "CapriCoreResources/images/MokouMod/Badge.png";
+    public static CardGroup burstCards;
+    public static CardGroup igniteCards;
+    public int threeAM_AWFUL_ACT_BYPASS_HELP = 0;
 
     public MokouMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -114,12 +123,14 @@ public class MokouMod implements
         Gson coolG = new Gson();
         InputStream in = MokouMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
+        /* No need, Mokou runs CapriCore as a dependency, which has the resources.
         String packageName = MokouMod.class.getPackage().getName();
         FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources");
         if (!modID.equals(EXCEPTION_STRINGS.DEVID)) {
             //if (!packageName.equals(getModID())) { throw new RuntimeException(EXCEPTION_STRINGS.PACKAGE_EXCEPTION + getModID()); }
             //if (!resourcePathExists.exists()) { throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources"); }
         }
+         */
     }
     @SuppressWarnings("unused")
     public static void initialize() {
@@ -143,8 +154,27 @@ public class MokouMod implements
         try { CreatePanel(); }
         catch (IOException e) { e.printStackTrace(); }
         resonanceBurst = new ResonanceBurst();
+        burstCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        igniteCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        CardLibrary.getAllCards().stream().filter(c ->
+                (c.hasTag(CardENUMs.BURST))).forEach(c -> burstCards.group.add(c.makeCopy()));
+        CardLibrary.getAllCards().stream().filter(c ->
+                (c.hasTag(CardENUMs.IGNITE))).forEach(c -> igniteCards.group.add(c.makeCopy()));
+
         logger.info("Loading badge image and mod options");
         logger.info("Done loading badge Image and mod options");
+        BaseMod.addSaveField("TheImmortalExhaustionCount", new CustomSavable<Integer>() {
+            @Override
+            public Integer onSave() {
+                return ImmortalityManager.getExhaustion();
+            }
+
+            @Override
+            public void onLoad(Integer i) {
+                ImmortalityManager.setExhaustion(i == null ? 3: i);
+            }
+        });
+
     }
     @Override
     public void receiveEditRelics() {
@@ -174,12 +204,16 @@ public class MokouMod implements
         tackybypass = true;
         if (p() instanceof MKU) {
             if (MokouMod.activeTutorials[0]){ atb(new MessageCaller(0)); }
-            BurstMechanics.PlayerBurstField.turnBurstAmount.set(p(), 0);
-            ResonanceBurstPhaseValue.resonanceburstPhase.set(p(), 0);
-            ResonanceBurstPhaseValue.maxResonanceBurstPhase.set(p(), 10);
+            ResonanceMechanics.resonanceTurnAmount.set(p(), 0);
+            ResonanceMechanics.resonanceburstPhase.set(p(), 0);
+            ResonanceMechanics.maxResonanceBurstPhase.set(p(), 10);
+            resonanceBurst.reset();
             BurstMechanics.PlayerBurstField.isBurst.set(p(), false);
-            resonanceBurst.reset(0);
             drawResonanceBurstUI = true;
+            if (ResonanceMechanics.geothermalResonance.get(p()) || ResonanceMechanics.geothermalResonanceAuth.get(p())){
+                atb(new AdvancePhaseAction(ResonanceMechanics.maxResonanceBurstPhase.get(p())));
+                ResonanceMechanics.geothermalResonance.set(p(), false);
+            }
         }
     }
     @Override
@@ -210,17 +244,30 @@ public class MokouMod implements
         config.save();
     }
     @Override
-    public void receiveCardUsed(AbstractCard abstractCard) {
-        atb(new CheckBurstAction());
-    }
-    @Override
     public void receivePreStartGame() {
         resonanceBurst.hide();
         drawResonanceBurstUI = false;
     }
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        BurstMechanics.PlayerBurstField.turnBurstAmount.set(p(), 0);
+        ResonanceMechanics.resonanceTurnAmount.set(p(), 0);
+        BurstMechanics.PlayerBurstField.isBurst.set(p(), false);
+        if(p().hasPower(OverheatPower.POWER_ID)){ atb(new RemoveSpecificPowerAction(p(), p(), OverheatPower.POWER_ID)); }
         drawResonanceBurstUI = false;
+        if (ResonanceMechanics.geothermalResonance.get(p()) != ResonanceMechanics.geothermalResonanceAuth.get(p())){
+            ResonanceMechanics.geothermalResonance.set(p(), false);
+            ResonanceMechanics.geothermalResonanceAuth.set(p(), false);
+        }
+    }
+    @Override
+    public void receiveStartAct() {
+        if(AbstractDungeon.actNum == 1 && !Settings.isEndless) {
+            if (threeAM_AWFUL_ACT_BYPASS_HELP != 0) { threeAM_AWFUL_ACT_BYPASS_HELP = 0;
+            } else {
+                threeAM_AWFUL_ACT_BYPASS_HELP++;
+                ResonanceMechanics.geothermalResonance.set(p(), false);
+                ResonanceMechanics.geothermalResonanceAuth.set(p(), false);
+            }
+        }
     }
 }

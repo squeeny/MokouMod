@@ -34,7 +34,6 @@ public class ExhaustPileToHandAction extends AbstractGameAction {
         ExhaustPileToHandAction.val = val;
     }
 
-
     public void update() {
         CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         Iterator<AbstractCard> var5 = this.p.exhaustPile.group.iterator();

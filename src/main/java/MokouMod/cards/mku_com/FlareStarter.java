@@ -1,13 +1,12 @@
 package MokouMod.cards.mku_com;
 
-import MokouMod.actions.EnterBurstAction;
+import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static MokouMod.MokouMod.makeID;
-import static MokouMod.util.mokouUtils.animationHandler;
 import static Utilities.squeenyUtils.atb;
 import static Utilities.squeenyUtils.doDef;
 public class FlareStarter extends abs_mku_card {
@@ -18,21 +17,21 @@ public class FlareStarter extends abs_mku_card {
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 3;
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 4;
+    private static final int RESONANCE = 1;
     public FlareStarter() {
-        super(cardInfo, true);
+        super(cardInfo, false);
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(RESONANCE);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDef(this.block);
-        atb(new EnterBurstAction());
-        if(this.upgraded){ atb(new EnterBurstAction()); }
+        atb(new AdvancePhaseAction());
         if(this.overheated){
-            atb(new EnterBurstAction());
-
+            doDef(this.block);
+            atb(new AdvancePhaseAction());
         }
     }
 }

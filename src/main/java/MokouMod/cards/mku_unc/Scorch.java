@@ -23,10 +23,12 @@ public class Scorch extends abs_mku_card {
     private static final int UPG_DMG = 1;
     private static final int HIT_COUNT = 2;
     private static final int UPG_HIT_COUNT = 1;
+    private static final int ENERGY = 1;
     public Scorch() {
         super(cardInfo, false);
         setDamage(DMG, UPG_DMG);
         setMagic(HIT_COUNT, UPG_HIT_COUNT);
+        setMokouMagic(ENERGY);
         setBurst(true);
     }
     @Override
@@ -34,11 +36,11 @@ public class Scorch extends abs_mku_card {
         for (int i = 0; i < this.magicNumber; i++) { doDmg(m, this.damage, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL); }
         if (mokouUtils.anonymouscheckBurst()) {
             doVfx(new FlameBurstEffect(p.hb.cX, p.hb.cY, 30));
-            atb(new GainEnergyAction(1));
+            atb(new GainEnergyAction(this.mokouSecondMagicNumber));
         }
         if(this.overheated){
             doDmg(m, this.damage, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-            atb(new GainEnergyAction(1));
+            atb(new GainEnergyAction(this.mokouSecondMagicNumber));
         }
     }
 }

@@ -1,13 +1,16 @@
 package MokouMod.cards.mku_abs;
 
 import MokouMod.MokouMod;
+import MokouMod.cards.mku_bas.Defend;
+import MokouMod.cards.mku_com.Stoke;
 import MokouMod.characters.MKU;
 import MokouMod.patches.cards.CardENUMs;
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import MokouMod.powers.OverheatPower;
 import Utilities.CardInfo;
 import Utilities.TextureLoader;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -24,8 +27,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.random.Random;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static MokouMod.MokouMod.getModID;
 import static MokouMod.MokouMod.makeID;
@@ -70,18 +71,24 @@ public abstract class abs_mku_card extends CustomCard {
     private static final float FPS_SCALE = (240f / Settings.MAX_FPS);
     private static final int MAX_PARTICLES = 75;
     public boolean overheated;
+    private boolean showoverheat;
+    private abs_mku_overheat overheat;
+    public boolean profaned;
+
     public ArrayList<FlameParticle> particles;
     public abs_mku_card(CardInfo cardInfo, boolean upgradesDescription) {
-        this(MKU.Enums.COLOR_RED, cardInfo.cardName, cardInfo.cardCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, upgradesDescription);
+        this(MKU.Enums.COLOR_RED, cardInfo.cardName, cardInfo.cardCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, upgradesDescription, true);
     }
-
+    public abs_mku_card(CardInfo cardInfo, boolean upgradesDescription, boolean showoverheat) {
+        this(MKU.Enums.COLOR_RED, cardInfo.cardName, cardInfo.cardCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, upgradesDescription, showoverheat);
+    }
     public abs_mku_card(CardColor color,
                         String cardName,
                         int cardCost,
                         CardType cardType,
                         CardTarget cardtarget,
                         CardRarity cardRarity,
-                        boolean upgradesDescription) {
+                        boolean upgradesDescription, boolean showoverheat) {
         super(makeID(cardName), "", (String) null, cardCost, "", cardType, color, cardRarity, cardtarget);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
         img = TextureLoader.getAndLoadCardTextureString(cardName, getModID());
@@ -118,15 +125,27 @@ public abstract class abs_mku_card extends CustomCard {
         this.upgradeInnate = false;
         this.upgradeExhaust = false;
         this.upgradeEthereal = false;
-        if (cardName.toLowerCase().contains("flare")) { this.tags.add(CardENUMs.FLARE); }
-        if (cardName.toLowerCase().contains("defend")) {
-            this.tags.add(CardTags.STARTER_DEFEND);
-        }
+        if (cardName.toLowerCase().contains("strike")) {
+            if(this.rarity == cardRarity.BASIC){ this.tags.add(CardTags.STARTER_STRIKE); }
+            this.tags.add(CardTags.STRIKE);
+        } if (cardName.toLowerCase().contains("defend")) {
+            if(this.rarity == cardRarity.BASIC){ this.tags.add(CardTags.STARTER_DEFEND); } }
         this.particles = new ArrayList<>();
-        this.overheated = false;
+        this.overheated = p() != null && p().hasPower(OverheatPower.POWER_ID) ? true : false;
+        this.profaned = false;
         CommonKeywordIconsField.useIcons.set(this, true);
+        this.showoverheat = showoverheat;
+        if(showoverheat) {
+            overheat = new abs_mku_overheat(
+                    new CardInfo(
+                            cardName,
+                            COST_UNPLAYABLE,
+                            this.type,
+                            this.target
+                    ), false);
+            this.cardsToPreview = overheat;
+        }
         InitializeCard();
-
     }
     /**
      * Methods to use in constructors
@@ -137,9 +156,14 @@ public abstract class abs_mku_card extends CustomCard {
 
     public void setDamage(int damage, int damageUpgrade) {
         this.baseDamage = this.damage = damage;
+        if(showoverheat){ overheat.baseDamage = this.baseDamage; }
         if (damageUpgrade != 0) {
             this.upgradeDamage = true;
             this.damageUpgrade = damageUpgrade;
+            if(showoverheat){
+                overheat.upgradeDamage = true;
+                overheat.damageUpgrade = damageUpgrade;
+            }
         }
     }
 
@@ -149,9 +173,14 @@ public abstract class abs_mku_card extends CustomCard {
 
     public void setBlock(int block, int blockUpgrade) {
         this.baseBlock = this.block = block;
+        if(showoverheat){ overheat.baseBlock = this.baseBlock; }
         if (blockUpgrade != 0) {
             this.upgradeBlock = true;
             this.blockUpgrade = blockUpgrade;
+            if(showoverheat) {
+                overheat.upgradeBlock = true;
+                overheat.blockUpgrade = this.blockUpgrade;
+            }
         }
     }
 
@@ -161,9 +190,14 @@ public abstract class abs_mku_card extends CustomCard {
 
     public void setMagic(int magic, int magicUpgrade) {
         this.baseMagicNumber = this.magicNumber = magic;
+        if(showoverheat){ overheat.baseMagicNumber = this.baseMagicNumber; }
         if (magicUpgrade != 0) {
             this.upgradeMagic = true;
             this.magicUpgrade = magicUpgrade;
+            if(showoverheat) {
+                overheat.magicNumber = this.magicUpgrade;
+                overheat.upgradeMagic = true;
+            }
         }
     }
 
@@ -173,9 +207,14 @@ public abstract class abs_mku_card extends CustomCard {
 
     public void setMokouMagic(int magic, int magicUpgrade) {
         this.mokouBaseSecondMagicNumber = this.mokouSecondMagicNumber = magic;
+        if(showoverheat){ overheat.mokouBaseSecondMagicNumber = this.mokouBaseSecondMagicNumber; }
         if (magicUpgrade != 0) {
             this.upgradeMokouMagic = true;
             this.mokoumagicUpgrade = magicUpgrade;
+            if(showoverheat) {
+                overheat.upgradeMokouMagic = true;
+                overheat.mokoumagicUpgrade = this.mokoumagicUpgrade;
+            }
         }
     }
 
@@ -274,7 +313,6 @@ public abstract class abs_mku_card extends CustomCard {
                 return CardRarity.SPECIAL;
         }
     }
-
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = super.makeStatEquivalentCopy();
@@ -306,73 +344,50 @@ public abstract class abs_mku_card extends CustomCard {
             ((abs_mku_card) card).upgradeBurst = this.upgradeBurst;
             ((abs_mku_card) card).mokouBaseSecondMagicNumber = this.mokouBaseSecondMagicNumber;
             ((abs_mku_card) card).mokouSecondMagicNumber = this.mokouSecondMagicNumber;
-            ((abs_mku_card) card).overheated = this.overheated;
+            ((abs_mku_card) card).profaned = this.profaned;
         }
         return card;
     }
-
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
+            if(showoverheat) { overheat.upgradeName(); }
             if (this.upgradesDescription) { this.rawDescription = cardStrings.UPGRADE_DESCRIPTION; }
             if (upgradeCost) {
                 int diff = this.baseCost - this.cost; //positive if cost is reduced
                 this.upgradeBaseCost(costUpgrade);
                 this.cost -= diff;
                 this.costForTurn -= diff;
-                if (cost < 0) {
-                    cost = 0;
-                }
-                if (costForTurn < 0) {
-                    costForTurn = 0;
-                }
+                if (cost < 0) { cost = 0; }
+                if (costForTurn < 0) { costForTurn = 0; }
             }
-            if (upgradeDamage) {
-                this.upgradeDamage(damageUpgrade);
-            }
-            if (upgradeBlock) {
-                this.upgradeBlock(blockUpgrade);
-            }
-            if (upgradeMagic) {
-                this.upgradeMagicNumber(magicUpgrade);
-            }
-            if (upgradeMokouMagic) {
-                this.upgradeMokouSecondMagicNumber(mokoumagicUpgrade);
-            }
-            if (!baseBurst && upgradeBurst) {
-                tags.add(CardENUMs.BURST);
-            } else if (baseBurst && !upgradeBurst) {
-                tags.remove(CardENUMs.BURST);
-            }
-            if (!baseIgnite && upgradeIgnite) {
-                tags.add(CardENUMs.IGNITE);
-            } else if (baseIgnite && !upgradeIgnite) {
-                tags.remove(CardENUMs.IGNITE);
-            }
-            if (baseExhaust ^ upgradeExhaust) {
-                this.exhaust = upgradeExhaust;
-            }
-            if (baseInnate ^ upgradeInnate) {
-                this.isInnate = upgradeInnate;
-            }
-            if (baseRetain ^ upgradeRetain) {
-                this.selfRetain = upgradeRetain;
-            }
-            if (baseEthereal ^ upgradeEthereal) {
-                this.isEthereal = upgradeEthereal;
-            }
+            if (upgradeDamage) { this.upgradeDamage(damageUpgrade); }
+            if (showoverheat && upgradeDamage) { overheat.upgradeDamage(damageUpgrade); }
+            if (upgradeBlock) { this.upgradeBlock(blockUpgrade); }
+            if (showoverheat && upgradeBlock) { overheat.upgradeBlock(blockUpgrade); }
+            if (upgradeMagic) { this.upgradeMagicNumber(magicUpgrade); }
+            if (showoverheat && upgradeMagic) { overheat.upgradeMagicNumber(magicUpgrade); }
+            if (upgradeMokouMagic) { this.upgradeMokouSecondMagicNumber(mokoumagicUpgrade); }
+            if (showoverheat && upgradeMokouMagic) { overheat.upgradeMokouSecondMagicNumber(mokoumagicUpgrade); }
+            if (!baseBurst && upgradeBurst) { tags.add(CardENUMs.BURST);
+            } else if (baseBurst && !upgradeBurst) { tags.remove(CardENUMs.BURST); }
+            if (!baseIgnite && upgradeIgnite) { tags.add(CardENUMs.IGNITE);
+            } else if (baseIgnite && !upgradeIgnite) { tags.remove(CardENUMs.IGNITE); }
+            if (baseExhaust ^ upgradeExhaust) { this.exhaust = upgradeExhaust; }
+            if (baseInnate ^ upgradeInnate) { this.isInnate = upgradeInnate; }
+            if (baseRetain ^ upgradeRetain) { this.selfRetain = upgradeRetain; }
+            if (baseEthereal ^ upgradeEthereal) { this.isEthereal = upgradeEthereal; }
+            if(showoverheat){ overheat.initializeDescription(); }
             this.initializeDescription();
+
         }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        if (this.hasTag(CardENUMs.BURST) && anonymouscheckBurst()) {
-            glowColor = GOLD_BORDER_GLOW_COLOR;
-        } else {
-            glowColor = BLUE_BORDER_GLOW_COLOR;
-        }
+        if (this.hasTag(CardENUMs.BURST) && anonymouscheckBurst()) { glowColor = GOLD_BORDER_GLOW_COLOR;
+        } else { glowColor = BLUE_BORDER_GLOW_COLOR; }
     }
 
     public void InitializeCard() {
@@ -403,6 +418,7 @@ public abstract class abs_mku_card extends CustomCard {
     public void update(){
         super.update();
         if (this.overheated && (p() != null & !p().hasPower(OverheatPower.POWER_ID))) { if(!this.purgeOnUse) { this.overheated = false; } }
+        else if (!showoverheat){ this.overheated = false; }
         else if(p() != null && p().hasPower(OverheatPower.POWER_ID)){ this.overheated = true; }
         else { this.overheated = false; }
         if(this.overheated) {
@@ -469,14 +485,14 @@ public abstract class abs_mku_card extends CustomCard {
             float velY = MathUtils.random(0.01f, maxV * speedScale);
             vel = new Vector2(velX, velY);
             lifeSpan = MathUtils.random(0.1f, 0.5f);
-            if(p().hasPower(BlueFlarePower.POWER_ID)){ color = Color.ROYAL.cpy(); }
+            if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)){ color = Color.ROYAL.cpy(); }
             else{ color = Color.RED.cpy(); }
             if(Math.random() < 0.25) {
-                if (p().hasPower(BlueFlarePower.POWER_ID)) { color = getRandomBlueFireColor().cpy(); }
+                if (p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { color = getRandomBlueFireColor().cpy(); }
                 else { color = getRandomFireColor().cpy(); }
             }
             if(Math.random() < 0.05 && upgraded) {
-                if (p().hasPower(BlueFlarePower.POWER_ID)) { color = getRandomBlueFireColor().cpy();  }
+                if (p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { color = getRandomBlueFireColor().cpy();  }
                 else { color = getRandomFireColor().cpy(); }
             }
         }

@@ -1,8 +1,10 @@
 package MokouMod.cards.mku_unc;
 
+import MokouMod.actions.DoubleIgniteAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.powers.IgnitePower;
 import Utilities.CardInfo;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -34,6 +36,9 @@ public class CrimsonFlare extends abs_mku_card {
             }
         }
         doDmg(m, this.damage);
-        if (this.overheated) {  }
+        if (this.overheated) {
+            atb(new WaitAction(0.01F));
+            atb(new DoubleIgniteAction(p()));
+        }
     }
 }

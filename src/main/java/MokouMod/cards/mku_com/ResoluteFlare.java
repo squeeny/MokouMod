@@ -27,7 +27,6 @@ public class ResoluteFlare extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         if (m.hasPower(IgnitePower.POWER_ID)) { doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }
         if (this.overheated) { doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }

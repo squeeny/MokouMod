@@ -20,7 +20,7 @@ public class SearingShot extends abs_mku_card {
     );
     public static final String ID = makeID(cardInfo.cardName);
     private static final int DMG = 10;
-    private static final int UPG_DMG = 6;
+    private static final int UPG_DMG = 3;
     private static final int WEAK_VULN = 1;
     private static final int UPG_WEAK_VULN = 1;
     public SearingShot() {
@@ -31,24 +31,17 @@ public class SearingShot extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doAllDmg(this.damage, AbstractGameAction.AttackEffect.SLASH_HEAVY, false);
         for(AbstractMonster mo: getAliveMonsters()){
             int currentmaxhealth = p().maxHealth;
             int currenthealth = p().currentHealth;
             if (currenthealth >= (currentmaxhealth / 2)) {
                 doPow(mo, new VulnerablePower(mo, this.magicNumber, false));
-                if(this.overheated){
-                    doPow(mo, new WeakPower(mo, this.magicNumber, false));
-
-                }
+                if(this.overheated){ doPow(mo, new WeakPower(mo, this.magicNumber, false)); }
             }
             else {
                 doPow(mo, new WeakPower(mo, this.magicNumber, false));
-                if(this.overheated){
-                    doPow(mo, new VulnerablePower(mo, this.magicNumber, false));
-
-                }
+                if(this.overheated){ doPow(mo, new VulnerablePower(mo, this.magicNumber, false)); }
             }
         }
     }

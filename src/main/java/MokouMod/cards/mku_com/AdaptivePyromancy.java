@@ -22,7 +22,7 @@ public class AdaptivePyromancy extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     private static final int DMG = 7;
     private static final int UPG_DMG = 3;
-    private static final int IGNITE = 2;
+    private static final int IGNITE = 4;
     private static final int UPG_IGNITE = 1;
     public AdaptivePyromancy() {
         super(cardInfo, false);
@@ -32,22 +32,28 @@ public class AdaptivePyromancy extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDmg(m, this.damage);
+        boolean target = false;
         if (mokouUtils.anonymouscheckBurst()) {
             if (isAttackIntent(m.intent)){
                 doPow(p, new IgnitePower(p, this.magicNumber));
                 if(this.overheated){
-                    doPow(m, new IgnitePower(m, this.magicNumber));
-
-                }
+                    target = true;
+                    doPow(m, new IgnitePower(m, this.magicNumber)); }
             }
             else {
                 doPow(m, new IgnitePower(m, this.magicNumber));
                 if(this.overheated){
-                    doPow(p, new IgnitePower(p, this.magicNumber));
-
+                    target = true;
+                    doPow(p, new IgnitePower(p, this.magicNumber)); }
+            }
+        }
+        if(this.overheated){
+            if(!target){
+                for (AbstractMonster mo: getAliveMonsters()){
+                    doPow(mo, new IgnitePower(mo, this.magicNumber));
                 }
+                doPow(p, new IgnitePower(p, this.magicNumber));
             }
         }
     }

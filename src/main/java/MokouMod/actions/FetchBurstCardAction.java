@@ -7,49 +7,31 @@ import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.ArrayList;
 
+import static MokouMod.MokouMod.burstCards;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 
 public class FetchBurstCardAction extends AbstractGameAction {
 
     public FetchBurstCardAction(int amount) {
-        this.amount = amount;
+        this.amount = amount > 0 ? amount : 1;
         this.actionType = ActionType.WAIT;
         this.duration = Settings.ACTION_DUR_FAST;
     }
-
     public static AbstractCard fetchburstcard() {
-
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-
-        stanceChoices.addAll(srcCommonCardPool.group);
-        stanceChoices.addAll(srcUncommonCardPool.group);
-        stanceChoices.addAll(srcRareCardPool.group);
-
-        stanceChoices.removeIf(c -> (!c.hasTag(CardENUMs.BURST)));
-
+        stanceChoices.addAll(burstCards.group);
         return stanceChoices.get(cardRandomRng.random(stanceChoices.size() - 1));
-
     }
-
     public void update() {
-
         if (duration == Settings.ACTION_DUR_FAST) {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-
-            for(int i = 0; i < amount; i += 1){
-                stanceChoices.add(fetchburstcard());
-            }
-
+            for(int i = 0; i < amount; i++){ stanceChoices.add(fetchburstcard()); }
             for (AbstractCard c : stanceChoices) {
-                player.hand.addToTop(c.makeCopy());
+                c.costForTurn = 0;
+                player.hand.addToTop(c.makeStatEquivalentCopy());
             }
-            if(stanceChoices.size() > 0){ tickDuration(); }
-            return;
+            tickDuration();
         }
-        else {
-            this.isDone = true;
-
-        }
+        this.isDone = true;
     }
-
 }

@@ -22,7 +22,7 @@ public class Rebirth extends abs_mku_card {
         super(cardInfo,false);
         setMagic(PROVIDENCE);
         setCostUpgrade(UPGRADE_COST);
-        this.exhaust = true;
+        //this.exhaust = true;
         //this.purgeOnUse = true;
     }
     @Override

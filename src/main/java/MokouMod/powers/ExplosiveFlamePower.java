@@ -35,6 +35,7 @@ public class ExplosiveFlamePower extends AbstractPower {
 
         updateDescription();
         loadRegion("flameBarrier");
+        canGoNegative = false;
     }
 
     public void updateDescription() { this.description = this.amount == 1 ? String.format(DESCRIPTIONS[0], this.amount, this.damage) : String.format(DESCRIPTIONS[1], this.amount, this.damage); }

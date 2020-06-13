@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static MokouMod.MokouMod.makeID;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
 import static Utilities.squeenyUtils.atb;
 
 public class HeatFactory extends abs_mku_card {
@@ -35,19 +36,18 @@ public class HeatFactory extends abs_mku_card {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new LoseHPAction(p, p, this.magicNumber));
-        atb(new GainEnergyAction(p.energy.energyMaster - EnergyPanel.totalCount + this.costForTurn));
-        if(this.overheated) {
-            atb(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE));
-
+        if(anonymouscheckBurst()) {
+            atb(new LoseHPAction(p, p, this.magicNumber));
+            atb(new GainEnergyAction(p.energy.energyMaster - EnergyPanel.totalCount + this.costForTurn));
         }
+        if(this.overheated) { atb(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE)); }
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) { return false; }
-        if (mokouUtils.anonymouscheckBurst()) { canUse = true; }
+        if (anonymouscheckBurst()) { canUse = true; }
         else { canUse = false; }
         return canUse;
     }

@@ -1,6 +1,6 @@
 package MokouMod.ui;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import MokouMod.twitch.SlayTheRelicsIntegration;
 import Utilities.TextureLoader;
 import com.badlogic.gdx.Gdx;
@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import static MokouMod.MokouMod.makeID;
 import static MokouMod.mechanics.ImmortalityManager.getExhaustion;
 import static MokouMod.mechanics.ImmortalityManager.shouldRenderExhaustion;
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class ExhaustionPanel extends AbstractPanel {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ExhaustionPanel"));
@@ -72,7 +71,7 @@ public class ExhaustionPanel extends AbstractPanel {
     }
     private void updateVfx() {
         try {
-            if (p().hasPower(BlueFlarePower.POWER_ID)) { tex = OrbVfx("blue");
+            if (p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { tex = OrbVfx("blue");
             } else { tex = OrbVfx("orange"); }
         }
         catch(Exception e) { tex = OrbVfx("orange"); }

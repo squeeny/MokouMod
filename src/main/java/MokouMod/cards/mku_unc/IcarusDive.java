@@ -1,73 +1,55 @@
 package MokouMod.cards.mku_unc;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.interfaces.onOtherExhaustSubscriber;
 import Utilities.CardInfo;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static MokouMod.MokouMod.makeID;
-import static MokouMod.util.mokouUtils.getTurnBurstAmount;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
 import static Utilities.squeenyUtils.doVfx;
-import Utilities.CardInfo;
+
+import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
+
 import static Utilities.squeenyUtils.*;
-public class IcarusDive extends abs_mku_card {
+public class IcarusDive extends abs_mku_card implements onOtherExhaustSubscriber {
     private final static CardInfo cardInfo = new CardInfo(
             IcarusDive.class.getSimpleName(),
-            COSTS[4],
+            COSTS[2],
             CardType.ATTACK,
             CardTarget.ENEMY
     );
     public final static String ID = makeID(cardInfo.cardName);
-    private static final int DAMAGE = 4;
-    private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 1;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 3;
+    private static final int NORMAL_UPG = 3;
+    public boolean enhanceable;
     public IcarusDive() {
         super(cardInfo, false);
-        setDamage(DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
-        if (CardCrawlGame.dungeon != null)
-            configureCostsOnNewCard();
-    }
-    public void configureCostsOnNewCard() {
-        updateCost(-getTurnBurstAmount());
-    }
-    public void triggerOnCardPlayed(AbstractCard c) {
-        int diff = this.cost - this.costForTurn;
-        int tmpCost = cardInfo.cardCost - getTurnBurstAmount();
-        if (tmpCost < 0) {
-            tmpCost = 0;
-        }
-        if (tmpCost != this.cost) {
-            this.isCostModified = true;
-            this.cost = tmpCost;
-            this.costForTurn = this.cost - diff;
-            if (this.costForTurn < 0) {
-                this.costForTurn = 0;
-            }
-        }
+        setDamage(DAMAGE, UPG_DAMAGE);
+        this.enhanceable = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        float yOffset = (m.hb_h/2.0f)*0.33f;
-        float mtop = m.drawY+(m.hb_h/2.0f);
-        for (int i = 0; i < magicNumber; i++) {
-            float tmp = yOffset * i;
-            doVfx(new FlashAtkImgEffect(m.drawX, mtop - tmp, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
-            atb(new SFXAction("BLUNT_FAST"));
-            doDmg(m, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);
-        }
+        this.enhanceable = false;
+        atb(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
+        doDmg(m, this.damage);
         if(this.overheated){
-            atb(new GainEnergyAction(getTurnBurstAmount() - 1));
-            atb(new ExhaustSpecificCardAction(this, p().hand, true));
-
+            atb(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
+            doDmg(m, this.damage);
+        }
+    }
+    @Override
+    public void onOtherExhaust(AbstractCard c) {
+        for (AbstractCard card : p().hand.group) {
+            if (card.equals(this)) {
+                if ((this).enhanceable) {
+                    this.baseDamage = this.baseDamage + NORMAL_UPG;
+                } else { (this).enhanceable = true; }
+            }
         }
     }
 }

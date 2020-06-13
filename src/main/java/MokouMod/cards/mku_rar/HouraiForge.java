@@ -29,7 +29,7 @@ public class HouraiForge extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(p().hasPower(HouraiForgePower.POWER_ID)){ doPow(p(), new HouraiForgePower(p())); }
+        doPow(p(), new HouraiForgePower(p()));
         if(this.overheated){ atb(new ArmamentsAction(true)); }
     }
 }

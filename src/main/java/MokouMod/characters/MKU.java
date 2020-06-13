@@ -3,8 +3,8 @@ package MokouMod.characters;
 import MokouMod.MokouMod;
 import MokouMod.MokouPlayerListener;
 import MokouMod.cards.mku_bas.Defend;
-import MokouMod.cards.mku_bas.Flare;
-import MokouMod.cards.mku_bas.HeatFlare;
+import MokouMod.cards.mku_bas.Strike;
+import MokouMod.cards.mku_bas.HeatSpark;
 import MokouMod.relics.PhoenixFeather;
 import MokouMod.ui.MokouEnergyOrb;
 import Utilities.BetterSpriterAnimation;
@@ -24,6 +24,8 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.city.Snecko;
+import com.megacrit.cardcrawl.relics.SneckoEye;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -102,16 +104,16 @@ public class MKU extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         logger.info("Begin loading starter Deck Strings");
-        retVal.add(Flare.ID);
-        retVal.add(Flare.ID);
-        retVal.add(Flare.ID);
-        retVal.add(Flare.ID);
-        retVal.add(Flare.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(HeatFlare.ID);
+        retVal.add(HeatSpark.ID);
         return retVal;
     }
 
@@ -120,6 +122,7 @@ public class MKU extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(PhoenixFeather.ID);
         UnlockTracker.markRelicAsSeen(PhoenixFeather.ID);
+        UnlockTracker.markRelicAsSeen(SneckoEye.ID);
         return retVal;
     }
 
@@ -163,7 +166,7 @@ public class MKU extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new HeatFlare();
+        return new HeatSpark();
     }
 
     @Override

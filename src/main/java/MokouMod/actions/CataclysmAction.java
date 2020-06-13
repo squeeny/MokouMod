@@ -18,17 +18,16 @@ public class CataclysmAction extends AbstractGameAction {
     private DamageInfo info;
     private float startingDuration;
     private boolean overheat;
-    public CataclysmAction(AbstractCreature target, DamageInfo info, boolean overheat) {
-
+    private int block;
+    public CataclysmAction(AbstractCreature target, DamageInfo info, boolean overheat, int block) {
         this.info = info;
         setValues(target, info);
-
         this.actionType = AbstractGameAction.ActionType.WAIT;
         this.attackEffect = AbstractGameAction.AttackEffect.FIRE;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.duration = this.startingDuration;
         this.overheat = overheat;
-
+        this.block = block;
     }
 
     public void update() {
@@ -41,7 +40,7 @@ public class CataclysmAction extends AbstractGameAction {
                 int i;
                 for (i = 0; i < count; i++) {
                     att(new DamageAction(this.target, this.info, AbstractGameAction.AttackEffect.FIRE));
-                    if(this.overheat){ att(new GainBlockAction(p(), 3)); }
+                    if(this.overheat){ att(new GainBlockAction(p(), this.block)); }
                     AbstractCard card = tmp.getNCardFromTop(i);
                     p().discardPile.moveToExhaustPile(card);
                     p().discardPile.applyPowers();

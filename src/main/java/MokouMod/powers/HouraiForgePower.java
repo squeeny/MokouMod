@@ -26,6 +26,7 @@ public class HouraiForgePower extends AbstractPower implements onGainOverheatSub
         type = PowerType.BUFF;
         updateDescription();
         loadRegion("flameBarrier");
+        canGoNegative = false;
     }
     @Override
     public void updateDescription() { this.description = String.format(DESCRIPTIONS[0], this.amount); }

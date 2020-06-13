@@ -23,7 +23,7 @@ public class Burn extends abs_mku_card {
     private static final int BLOCK = 10;
     private static final int UPG_BLOCK = 4;
     public Burn() {
-        super(cardInfo, false);
+        super(cardInfo, true);
         setMagic(EXHAUST);
         setBlock(BLOCK, UPG_BLOCK);
         setBurst(true);
@@ -32,13 +32,9 @@ public class Burn extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDef(this.block);
         if(anonymouscheckBurst()) {
-            if (this.upgraded) { atb(new ExhaustAction(1, false));
-            } else { atb(new ExhaustAction(1, true, false, false)); }
+            if (this.upgraded) { atb(new ExhaustAction(this.magicNumber, false));
+            } else { atb(new ExhaustAction(this.magicNumber, true, false, false)); }
         }
-        if(this.overheated){
-            doDef(this.block);
-            atb(new ExhaustAction(1, false));
-        }
+        if(this.overheated){ doDef(this.block); }
     }
-
 }

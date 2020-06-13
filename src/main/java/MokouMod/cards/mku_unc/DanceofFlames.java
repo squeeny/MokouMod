@@ -1,8 +1,10 @@
 package MokouMod.cards.mku_unc;
 
+import MokouMod.actions.ConvertIgniteVigorAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.powers.IgnitePower;
 import Utilities.CardInfo;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,7 +19,7 @@ public class DanceofFlames extends abs_mku_card {
     );
     public static final String ID = makeID(cardInfo.cardName);
     private static final int IGNITE = 3;
-    private static final int UPG_IGNITE = 2;
+    private static final int UPG_IGNITE = 3;
     private static final int IGNITE_BLOCK = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
@@ -32,6 +34,10 @@ public class DanceofFlames extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(IgnitePower.POWER_ID)) {
             for (int i = 0; i < p.getPower(IgnitePower.POWER_ID).amount / this.mokouSecondMagicNumber; ++i) { doDef(this.block); }
+        }
+        if(this.overheated){
+            atb(new WaitAction(0.01F));
+            atb(new ConvertIgniteVigorAction());
         }
     }
     @Override

@@ -11,11 +11,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static MokouMod.MokouMod.makeID;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
 import static Utilities.squeenyUtils.atb;
 public class ControlledCombustion extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             ControlledCombustion.class.getSimpleName(),
-            COSTS[1],
+            COSTS[0],
             CardType.SKILL,
             CardTarget.SELF
     );
@@ -34,23 +35,11 @@ public class ControlledCombustion extends abs_mku_card {
         return 16;
     }
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-
-        boolean canUse = super.canUse(p, m);
-
-        if (!canUse) { return false; }
-        if (mokouUtils.anonymouscheckBurst()) { canUse = true; }
-        else { canUse = false; }
-
-        return canUse;
-    }
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new ExhaustHandAction());
-        atb(new DrawCardAction(magicNumber));
-        if(this.overheated){
-            atb(new GainEnergyAction(p.energy.energyMaster - EnergyPanel.totalCount + this.costForTurn));
-
+        if (anonymouscheckBurst()) {
+            atb(new ExhaustHandAction());
+            atb(new DrawCardAction(magicNumber));
         }
+        if (this.overheated) { atb(new GainEnergyAction(p.energy.energyMaster - EnergyPanel.totalCount + this.costForTurn)); }
     }
 }

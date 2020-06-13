@@ -33,13 +33,9 @@ public class TemporalFireSeal extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        animationHandler(this);
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         if (mokouUtils.anonymouscheckBurst()) { doPow(m, new StrengthPower(m, -this.magicNumber)); }
-        if(this.overheated){
-            for(AbstractMonster mo : getAliveMonsters()){ doPow(mo, new StrengthPower(mo, -this.magicNumber)); }
-
-        }
+        if(this.overheated){ for(AbstractMonster mo : getAliveMonsters()){ doPow(mo, new StrengthPower(mo, -this.magicNumber)); } }
     }
     @Override
     public float getTitleFontSize() { return 16; }

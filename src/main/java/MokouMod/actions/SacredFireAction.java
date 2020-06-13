@@ -1,5 +1,7 @@
 package MokouMod.actions;
 
+import MokouMod.cards.mku_rar.RadiantBlade;
+import MokouMod.cards.mku_rar.SacredFire;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
 
 import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
+
 public class SacredFireAction extends AbstractGameAction {
     private AbstractMonster targetMonster;
     private boolean upgraded;
@@ -24,10 +28,13 @@ public class SacredFireAction extends AbstractGameAction {
         this.targetMonster = m;
         this.upgraded = upgraded;
         this.p = p();
-        AbstractCard tmp = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
-        if (upgraded) {
-            tmp.upgrade();
-        }
+        ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
+        stanceChoices.addAll(srcCommonCardPool.group);
+        stanceChoices.addAll(srcUncommonCardPool.group);
+        stanceChoices.addAll(srcRareCardPool.group);
+        stanceChoices.removeIf(c -> ((c instanceof RadiantBlade || c instanceof SacredFire) || !(c.type == AbstractCard.CardType.ATTACK)));
+        AbstractCard tmp = stanceChoices.get(cardRandomRng.random(stanceChoices.size() - 1)).makeStatEquivalentCopy();
+        if (upgraded) { tmp.upgrade(); }
         this.list.add(tmp);
     }
     public void update() {

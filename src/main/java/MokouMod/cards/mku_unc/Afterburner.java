@@ -1,6 +1,7 @@
 package MokouMod.cards.mku_unc;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.patches.cards.CardENUMs;
 import MokouMod.util.mokouUtils;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static MokouMod.MokouMod.makeID;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
 import static Utilities.squeenyUtils.atb;
 
 public class Afterburner extends abs_mku_card {
@@ -19,7 +21,6 @@ public class Afterburner extends abs_mku_card {
     );
     public static final String ID = makeID(cardInfo.cardName);
     private static final int ENERGY = 2;
-
     public Afterburner() {
         super(cardInfo, false);
         setMagic(ENERGY);
@@ -27,17 +28,9 @@ public class Afterburner extends abs_mku_card {
         setBurst(true);
         setRetain(false, true);
     }
-
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) { atb(new GainEnergyAction(ENERGY)); }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) { return false; }
-        if (this.overheated) { canUse = true; }
-        if (mokouUtils.anonymouscheckBurst()) { canUse = true; }
-        else { canUse = false; }
-        return canUse;
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (anonymouscheckBurst()) { atb(new GainEnergyAction(ENERGY)); }
+        if (this.overheated) { atb(new GainEnergyAction(ENERGY)); }
     }
 }

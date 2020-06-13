@@ -27,6 +27,5 @@ public class IgneousBlow extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new IgneousBlowAction(m, new DamageInfo(p, this.damage = this.overheated ? (int) (this.damage * 1.5F) : this.damage, this.damageTypeForTurn)));
-        if(this.overheated){  }
     }
 }

@@ -1,6 +1,6 @@
 package MokouMod.vfx.general;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class CasualFlameParticleEffect extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
@@ -35,7 +34,7 @@ public class CasualFlameParticleEffect extends AbstractGameEffect {
         this.vY = MathUtils.random(25.0F, 50.0F) * Settings.scale;
         this.vY2 = MathUtils.random(-50.0F, 50.0F) * Settings.scale / this.startingDuration;
         this.vS = MathUtils.random(-0.5F, 0.5F) * Settings.scale;
-        if(p().hasPower(BlueFlarePower.POWER_ID)) {
+        if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) {
             this.color = new Color(1.0F, 1.0F - MathUtils.random(0.6F), 1.0F, 0.0F);
             this.color.r -= (this.color.g - MathUtils.random(-0.3F, 0.3F));
         }

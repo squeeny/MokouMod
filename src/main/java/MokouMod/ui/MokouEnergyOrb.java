@@ -1,6 +1,6 @@
 package MokouMod.ui;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import MokouMod.vfx.general.CalmFireEffect;
 import MokouMod.vfx.general.CasualFlameParticleEffect;
 import basemod.abstracts.CustomEnergyOrb;
@@ -68,7 +68,7 @@ public class MokouEnergyOrb extends CustomEnergyOrb {
             flameEffects.add(new CasualFlameParticleEffect(current_x + xOffset, current_y + yOffset));
         }
         if (calmFireCooldown < 0) { calmFireCooldown += CD;
-            if(p().hasPower(BlueFlarePower.POWER_ID)) { baseEffects.add(new CalmFireEffect(current_x, current_y + CALM_FIRE_OFFSET, Color.TEAL)); }
+            if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { baseEffects.add(new CalmFireEffect(current_x, current_y + CALM_FIRE_OFFSET, Color.TEAL)); }
             else { baseEffects.add(new CalmFireEffect(current_x, current_y + CALM_FIRE_OFFSET, Color.ORANGE)); }
         }
     }

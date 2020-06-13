@@ -1,7 +1,7 @@
 
 package MokouMod.vfx.general;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class BlueFastSmokeParticle extends AbstractGameEffect {
     private float x;
@@ -25,7 +24,7 @@ public class BlueFastSmokeParticle extends AbstractGameEffect {
     public BlueFastSmokeParticle(float x, float y) {
         if (img == null) { img = ImageMaster.EXHAUST_L; }
         this.targetScale = MathUtils.random(0.3F, 0.6F) * Settings.scale;
-        if(p().hasPower(BlueFlarePower.POWER_ID)){ this.color = new Color(MathUtils.random(0.5F, 0.8F), MathUtils.random(0.8F, 1.0F), 1.0F, 1.0F);}
+        if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)){ this.color = new Color(MathUtils.random(0.5F, 0.8F), MathUtils.random(0.8F, 1.0F), 1.0F, 1.0F);}
         else { this.color = new Color(1.0F, MathUtils.random(0.8F, 1.0F), MathUtils.random(0.5F, 0.8F), 1.0F); }
         this.x = x - (float)img.packedWidth / 2.0F;
         this.y = y - (float)img.packedHeight / 2.0F;
@@ -34,7 +33,7 @@ public class BlueFastSmokeParticle extends AbstractGameEffect {
     }
     public void update() {
         Color var10000;
-        if(p().hasPower(BlueFlarePower.POWER_ID)) {
+        if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) {
             if (this.color.r > 0.1F) {
                 var10000 = this.color;
                 var10000.b -= Gdx.graphics.getDeltaTime() * 4.0F;

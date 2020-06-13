@@ -26,9 +26,6 @@ public class Refresh extends abs_mku_card {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         atb(new FetchBurstCardAction(this.magicNumber));
-        if(this.overheated){
-            atb(new FetchBurstCardAction(1));
-
-        }
+        if(this.overheated){ atb(new FetchBurstCardAction(this.magicNumber)); }
     }
 }

@@ -14,13 +14,13 @@ import static Utilities.squeenyUtils.doDmg;
 public class SacredFire extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             SacredFire.class.getSimpleName(),
-            COSTS[2],
+            COSTS[1],
             CardType.ATTACK,
             CardTarget.ENEMY
 
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int DMG = 6;
+    private static final int DMG = 7;
     private static final int UPG_DMG = 3;
     public SacredFire() {
         super(cardInfo, true);
@@ -31,8 +31,6 @@ public class SacredFire extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         if(anonymouscheckBurst()){ atb(new SacredFireAction(m, upgraded)); }
-        if(this.overheated){
-            atb(new SacredFireAction(m, upgraded));
-        }
+        if(this.overheated){ atb(new SacredFireAction(m, upgraded)); }
     }
 }

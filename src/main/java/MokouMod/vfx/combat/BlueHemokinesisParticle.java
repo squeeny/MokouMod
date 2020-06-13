@@ -1,6 +1,6 @@
 package MokouMod.vfx.combat;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 
 import java.util.ArrayList;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class BlueHemokinesisParticle extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
@@ -50,7 +49,7 @@ public class BlueHemokinesisParticle extends AbstractGameEffect {
         this.controlPoints.clear();
         this.rotationRate = MathUtils.random(600.0F, 650.0F) * Settings.scale;
         this.currentSpeed = 1000.0F * Settings.scale;
-        if(p().hasPower(BlueFlarePower.POWER_ID)) { this.color = new Color(0.02F, 0.0F, 1.0F, 0.6F); }
+        if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { this.color = new Color(0.02F, 0.0F, 1.0F, 0.6F); }
         else { this.color = new Color(1.0F, 0.0F, 0.02F, 0.6F); }
         this.duration = 0.7F;
         this.scale = 1.0F * Settings.scale;

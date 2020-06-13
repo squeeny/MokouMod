@@ -15,22 +15,6 @@ public class mokouUtils {
     /** Mokou General Utils */
     //Checks for Burst without incrementing Resonance - Used for cards.
     public static boolean anonymouscheckBurst() { return BurstMechanics.PlayerBurstField.isBurst.get(p()); }
-    // Checks for Burst and increments Resonance.
-    public static boolean checkBurst() {
-        boolean tmp = BurstMechanics.PlayerBurstField.isBurst.get(p());
-        if (tmp) { incrementTurnBurstAmount(); }
-        return tmp;
-    }
-    // Returns the total amount of times Burst was incremented this turn.
-    public static int getTurnBurstAmount() { return BurstMechanics.PlayerBurstField.turnBurstAmount.get(p()); }
-    // Increments the total amount of times Burst was activated.
-    public static void incrementTurnBurstAmount() {
-        atb(new AdvancePhaseAction());
-        BurstMechanics.PlayerBurstField.turnBurstAmount.set(p(), getTurnBurstAmount() + 1);
-        if (p().hasPower(ResonatingAuraPower.POWER_ID)) {
-            for(int i = 0; i < p().getPower(ResonatingAuraPower.POWER_ID).amount; ++i) { atb(new AdvancePhaseAction()); }
-        }
-    }
     // Returns a random color, used for VFX.
     public static Color getRandomFireColor() {
         int i = MathUtils.random(3);
@@ -71,6 +55,7 @@ public class mokouUtils {
                     //runAnimation("Skill");
                     break;
                 case POWER:
+                    //runAnimation("Spell");
                     //runAnimation("Power");
                     break;
                 default: break;

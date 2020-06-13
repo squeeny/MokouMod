@@ -1,6 +1,7 @@
 package MokouMod.cards.mku_unc;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.patches.cards.CardENUMs;
 import MokouMod.util.mokouUtils;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static MokouMod.MokouMod.makeID;
+import static MokouMod.util.mokouUtils.anonymouscheckBurst;
 import static Utilities.squeenyUtils.doAllDmg;
 public class Fireball extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
@@ -18,28 +20,22 @@ public class Fireball extends abs_mku_card {
     );
     public static final String ID = makeID(cardInfo.cardName);
     private static final int DMG = 18;
-    private static final int UPG_DMG = 7;
+    private static final int UPG_DMG = 6;
     public Fireball() {
         super(cardInfo, false);
         setDamage(DMG, UPG_DMG);
         setMultiDamage(true);
         setBurst(true);
         setEthereal(true);
+        this.profaned = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false);
-        if(this.overheated){
-            doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false);
-
-        }
+        if(anonymouscheckBurst() || this.overheated){ doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false); }
     }
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) { return false; }
-        if (mokouUtils.anonymouscheckBurst()) { canUse = true; }
-        else { canUse = false; }
-        return canUse;
+    public void triggerOnGlowCheck() {
+        if ((this.hasTag(CardENUMs.BURST) && anonymouscheckBurst()) || this.overheated) { glowColor = GOLD_BORDER_GLOW_COLOR;
+        } else { glowColor = BLUE_BORDER_GLOW_COLOR; }
     }
 }

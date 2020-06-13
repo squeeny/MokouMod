@@ -18,18 +18,19 @@ public class ScorchedEarth extends abs_mku_card {
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int IGNITE = 2;
+    private static final int IGNITE = 3;
     private static final int UPG_IGNITE = 1;
+    private static final int OVERHEAT_IGNITE = 5;
+    private static final int UPG_OVERHEAT_IGNITE = 3;
     public ScorchedEarth() {
         super(cardInfo, false);
         setMagic(IGNITE, UPG_IGNITE);
+        setMokouMagic(OVERHEAT_IGNITE, UPG_OVERHEAT_IGNITE);
         setIgnite(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doPow(p, new ScorchedEarthPower(p, this.magicNumber));
-        if(this.overheated){
-            for(AbstractMonster mo: getAliveMonsters()){ doPow(mo, new IgnitePower(mo, this.magicNumber)); }
-        }
+        if(this.overheated){ for(AbstractMonster mo: getAliveMonsters()){ doPow(mo, new IgnitePower(mo, this.magicNumber)); } }
     }
 }

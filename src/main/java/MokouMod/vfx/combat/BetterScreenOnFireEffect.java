@@ -1,6 +1,6 @@
 package MokouMod.vfx.combat;
 
-import MokouMod.powers.BlueFlarePower;
+import MokouMod.powers.SpontaneousHumanCombustionPower;
 import MokouMod.vfx.general.BetterGiantFireEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
-import Utilities.CardInfo;
 import static Utilities.squeenyUtils.*;
 public class BetterScreenOnFireEffect extends AbstractGameEffect {
     private float timer = 0.0F;
@@ -26,7 +25,7 @@ public class BetterScreenOnFireEffect extends AbstractGameEffect {
     public void update() {
         if (this.duration == this.startingDuration) {
             CardCrawlGame.sound.play(soundKey);
-            if(p().hasPower(BlueFlarePower.POWER_ID)) { AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(Color.TEAL)); }
+            if(p().hasPower(SpontaneousHumanCombustionPower.POWER_ID)) { AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(Color.TEAL)); }
             else{ AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(Color.FIREBRICK)); }
         }
         this.duration -= Gdx.graphics.getDeltaTime();

@@ -2,11 +2,13 @@ package MokouMod.cards.mku_unc;
 
 import MokouMod.actions.DoubleIgniteAction;
 import MokouMod.actions.GainBlockPerIgniteStackAction;
+import MokouMod.actions.TripleIgniteAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.patches.cards.CardENUMs;
 import MokouMod.powers.IgnitePower;
 import Utilities.CardInfo;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -27,12 +29,13 @@ public class HeatTransfer extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(AbstractMonster mo: getAliveMonsters()){
-            if(getPowerAmount(mo, IgnitePower.POWER_ID) > 0) {
-                doPow(p, new IgnitePower(p, getPowerAmount(mo, IgnitePower.POWER_ID)));
+            if(mo.hasPower(IgnitePower.POWER_ID)) {
+                atb(this.upgraded ? new TripleIgniteAction(mo) : new DoubleIgniteAction(mo));
+                atb(new WaitAction(0.01F));
+                doPow(p, new IgnitePower(p, mo.getPower(IgnitePower.POWER_ID).amount));
                 atb(new RemoveSpecificPowerAction(mo, p, IgnitePower.POWER_ID));
             }
         }
-        if (upgraded) { atb(new GainBlockPerIgniteStackAction()); }
-        if(this.overheated) { atb(new DoubleIgniteAction(p)); }
+        if (this.overheated) { atb(new GainBlockPerIgniteStackAction()); }
     }
 }

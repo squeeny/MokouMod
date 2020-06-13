@@ -2,6 +2,8 @@ package MokouMod.powers;
 
 import MokouMod.MokouMod;
 import MokouMod.cards.mku_abs.abs_mku_card;
+import MokouMod.interfaces.onIgniteLoseHPSubscriber;
+import MokouMod.interfaces.onLoseOverheatSubscriber;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -31,18 +33,17 @@ public class OverheatPower extends AbstractPower {
         isTurnBased = true;
         loadRegion("flameBarrier");
     }
-
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card instanceof abs_mku_card) {
-            if (this.amount == 1) { atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-            } else { atb(new ReducePowerAction(this.owner, this.owner, this, this.amount)); }
+            if (this.amount == 1) {
+                atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+                for (AbstractPower p: p().powers){ if (p instanceof onLoseOverheatSubscriber){ ((onLoseOverheatSubscriber) p).onLoseOverheat(); } }
+            } else { atb(new ReducePowerAction(this.owner, this.owner, this, 1)); }
         }
     }
-
     @Override
     public void updateDescription() {
         if (this.amount == 1) { this.description = DESCRIPTIONS[0];
         } else { this.description =  String.format(DESCRIPTIONS[1], this.amount); }
     }
-
 }

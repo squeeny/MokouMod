@@ -56,7 +56,6 @@ public class EruptionAction extends AbstractGameAction {
                 atb(new SFXAction("ATTACK_HEAVY"));
                 doVfx(new CleaveEffect());
                 atb(new DamageAllEnemiesAction(this.p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
-                for(AbstractMonster mo: getAliveMonsters()){ doPow(mo, new IgnitePower(mo, ignite)); }
                 atb(new ApplyPowerAction(p, p, new IgnitePower(p, ignite), ignite, true, AbstractGameAction.AttackEffect.NONE));
             }
             if (!this.freeToPlayOnce) { this.p.energy.use(EnergyPanel.totalCount); }
