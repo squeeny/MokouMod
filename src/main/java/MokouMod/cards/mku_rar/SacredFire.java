@@ -30,7 +30,9 @@ public class SacredFire extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
-        if(anonymouscheckBurst()){ atb(new SacredFireAction(m, upgraded)); }
+        if(anonymouscheckBurst()){
+            this.triggeredBurst = true;
+            atb(new SacredFireAction(m, upgraded)); }
         if(this.overheated){ atb(new SacredFireAction(m, upgraded)); }
     }
 }

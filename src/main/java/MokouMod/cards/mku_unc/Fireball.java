@@ -27,11 +27,12 @@ public class Fireball extends abs_mku_card {
         setMultiDamage(true);
         setBurst(true);
         setEthereal(true);
-        this.profaned = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(anonymouscheckBurst() || this.overheated){ doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false); }
+        if(anonymouscheckBurst() || this.overheated){
+            this.triggeredBurst = true;
+            doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false); }
     }
     @Override
     public void triggerOnGlowCheck() {

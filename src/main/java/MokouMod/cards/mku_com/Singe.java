@@ -27,11 +27,11 @@ public class Singe extends abs_mku_card {
          super(cardInfo, false);
          setDamage(DMG, UPG_DMG);
          setBurst(true, false);
-         this.profaned = true;
      }
      @Override
      public void use(AbstractPlayer p, AbstractMonster m) {
          if(anonymouscheckBurst() || this.overheated) {
+             this.triggeredBurst = true;
              doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
              atb(new ConvertIgniteVigorAction());
          }

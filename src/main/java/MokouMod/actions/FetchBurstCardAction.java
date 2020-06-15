@@ -1,13 +1,15 @@
 package MokouMod.actions;
 
+import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.patches.cards.CardENUMs;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import java.util.ArrayList;
 
-import static MokouMod.MokouMod.burstCards;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 
 public class FetchBurstCardAction extends AbstractGameAction {
@@ -19,6 +21,12 @@ public class FetchBurstCardAction extends AbstractGameAction {
     }
     public static AbstractCard fetchburstcard() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
+        CardGroup burstCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        CardLibrary.getAllCards().stream().filter(c ->
+                (c.hasTag(CardENUMs.BURST)) && c instanceof abs_mku_card).forEach(c -> burstCards.group.add(c.makeCopy()));
+        for(AbstractCard c: burstCards.group){
+            System.out.println(c + " [BURST]");
+        }
         stanceChoices.addAll(burstCards.group);
         return stanceChoices.get(cardRandomRng.random(stanceChoices.size() - 1));
     }

@@ -45,7 +45,9 @@ public class BlazingComet extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
-        if(anonymouscheckBurst()){ doPow(p, new DrawCardNextTurnPower(p, this.magicNumber)); }
+        if(anonymouscheckBurst()){
+            this.triggeredBurst = true;
+            doPow(p, new DrawCardNextTurnPower(p, this.magicNumber)); }
         if(this.overheated){ atb(new DrawCardAction(this.mokouSecondMagicNumber)); }
     }
 }

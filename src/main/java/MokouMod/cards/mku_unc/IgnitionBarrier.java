@@ -29,10 +29,7 @@ public class IgnitionBarrier extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDef(this.block);
         doPow(p, new IgnitionBarrierPower(p, this.magicNumber));
-        if(this.overheated){
-            doPow(p, new IgnitionBarrierPower(p, this.magicNumber));
-
-        }
+        if(this.overheated){ doPow(p, new IgnitionBarrierPower(p, this.magicNumber)); }
     }
 
     @Override

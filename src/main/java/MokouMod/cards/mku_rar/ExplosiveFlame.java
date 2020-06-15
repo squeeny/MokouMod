@@ -29,9 +29,7 @@ public class ExplosiveFlame extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doPow(p(), new ExplosiveFlamePower(p(), this.magicNumber));
         if(this.overheated){
-            for(AbstractMonster mo: getAliveMonsters()){
-                atb(new LoseHPAction(mo, mo, this.magicNumber));
-            }
+            for(AbstractMonster mo: getAliveMonsters()){ atb(new LoseHPAction(mo, mo, this.magicNumber)); }
         }
     }
 }

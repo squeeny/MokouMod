@@ -30,7 +30,9 @@ public class Afterburner extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (anonymouscheckBurst()) { atb(new GainEnergyAction(ENERGY)); }
+        if (anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            atb(new GainEnergyAction(ENERGY)); }
         if (this.overheated) { atb(new GainEnergyAction(ENERGY)); }
     }
 }

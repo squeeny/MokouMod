@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import static MokouMod.MokouMod.makeID;
 import static Utilities.squeenyUtils.*;
@@ -24,15 +25,13 @@ public class HeatTransfer extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     public HeatTransfer() {
         super(cardInfo, true);
-        this.tags.add(CardENUMs.IGNITE);
+        setIgnite(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(AbstractMonster mo: getAliveMonsters()){
             if(mo.hasPower(IgnitePower.POWER_ID)) {
-                atb(this.upgraded ? new TripleIgniteAction(mo) : new DoubleIgniteAction(mo));
-                atb(new WaitAction(0.01F));
-                doPow(p, new IgnitePower(p, mo.getPower(IgnitePower.POWER_ID).amount));
+                doPow(p, new IgnitePower(p, (this.upgraded ? mo.getPower(IgnitePower.POWER_ID).amount * 3 : mo.getPower(IgnitePower.POWER_ID).amount* 2 )));
                 atb(new RemoveSpecificPowerAction(mo, p, IgnitePower.POWER_ID));
             }
         }

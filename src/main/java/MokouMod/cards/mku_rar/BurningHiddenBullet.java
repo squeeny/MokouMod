@@ -35,18 +35,10 @@ public class BurningHiddenBullet extends abs_mku_card {
     }
     public static int countCards() {
         int count = 0;
-        for (AbstractCard c : p().hand.group) {
-            if (criteria(c)) { count++; }
-        }
-        for (AbstractCard c : p().drawPile.group) {
-            if (criteria(c)) { count++; }
-        }
-        for (AbstractCard c : p().discardPile.group) {
-            if (criteria(c)) { count++; }
-        }
-        for (AbstractCard c : p().exhaustPile.group) {
-            if (criteria(c)) { count++; }
-        }
+        for (AbstractCard c : p().hand.group) { if (criteria(c)) { count++; } }
+        for (AbstractCard c : p().drawPile.group) { if (criteria(c)) { count++; } }
+        for (AbstractCard c : p().discardPile.group) { if (criteria(c)) { count++; } }
+        for (AbstractCard c : p().exhaustPile.group) { if (criteria(c)) { count++; } }
         return count;
     }
     public static boolean criteria(AbstractCard c) { return c.hasTag(CardENUMs.BURST); }

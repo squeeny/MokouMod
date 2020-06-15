@@ -23,7 +23,6 @@ public class PhoenixForm extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     private static final int RESONANCE = 3;
     private static final int UPG_RESONANCE = 2;
-
     public PhoenixForm() {
         super(cardInfo, false);
         setCostUpgrade(COSTS[2]);

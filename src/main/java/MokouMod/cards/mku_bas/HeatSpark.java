@@ -36,7 +36,9 @@ public class HeatSpark extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        if(anonymouscheckBurst()){ doPow(m, new IgnitePower(m, this.magicNumber)); }
+        if(anonymouscheckBurst()){
+            this.triggeredBurst = true;
+            doPow(m, new IgnitePower(m, this.magicNumber)); }
         if(this.overheated){
             doPow(m, new IgnitePower(m, this.magicNumber));
             atb(new GainEnergyAction(this.magicNumber));

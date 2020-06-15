@@ -35,7 +35,9 @@ public class Firecracker extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDef(this.block);
-        if (mokouUtils.anonymouscheckBurst()) { atb(new DrawCardAction(p(), DRAW)); }
+        if (mokouUtils.anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            atb(new DrawCardAction(p(), DRAW)); }
         if(this.overheated){ atb(new GainEnergyAction(this.mokouSecondMagicNumber)); }
     }
 }

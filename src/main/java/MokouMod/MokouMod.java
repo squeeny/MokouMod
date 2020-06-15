@@ -2,6 +2,7 @@ package MokouMod;
 
 import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.actions.MessageCaller;
+import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.characters.MKU;
 import MokouMod.mechanics.ImmortalityManager;
 import MokouMod.patches.cards.CardENUMs;
@@ -87,8 +88,6 @@ public class MokouMod implements
     public static final String MKU_SHOULDER_2 = "CapriCoreResources/images/MokouMod/char/mokou/shoulder2.png";
     public static final String MKU_CORPSE = "CapriCoreResources/images/MokouMod/char/mokou/corpse.png";
     public static final String BADGE_IMAGE = "CapriCoreResources/images/MokouMod/Badge.png";
-    public static CardGroup burstCards;
-    public static CardGroup igniteCards;
     public int threeAM_AWFUL_ACT_BYPASS_HELP = 0;
 
     public MokouMod() {
@@ -154,13 +153,6 @@ public class MokouMod implements
         try { CreatePanel(); }
         catch (IOException e) { e.printStackTrace(); }
         resonanceBurst = new ResonanceBurst();
-        burstCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        igniteCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        CardLibrary.getAllCards().stream().filter(c ->
-                (c.hasTag(CardENUMs.BURST))).forEach(c -> burstCards.group.add(c.makeCopy()));
-        CardLibrary.getAllCards().stream().filter(c ->
-                (c.hasTag(CardENUMs.IGNITE))).forEach(c -> igniteCards.group.add(c.makeCopy()));
-
         logger.info("Loading badge image and mod options");
         logger.info("Done loading badge Image and mod options");
         BaseMod.addSaveField("TheImmortalExhaustionCount", new CustomSavable<Integer>() {

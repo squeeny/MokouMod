@@ -73,7 +73,7 @@ public abstract class abs_mku_card extends CustomCard {
     public boolean overheated;
     private boolean showoverheat;
     private abs_mku_overheat overheat;
-    public boolean profaned;
+    public boolean triggeredBurst;
 
     public ArrayList<FlameParticle> particles;
     public abs_mku_card(CardInfo cardInfo, boolean upgradesDescription) {
@@ -132,9 +132,9 @@ public abstract class abs_mku_card extends CustomCard {
             if(this.rarity == cardRarity.BASIC){ this.tags.add(CardTags.STARTER_DEFEND); } }
         this.particles = new ArrayList<>();
         this.overheated = p() != null && p().hasPower(OverheatPower.POWER_ID) ? true : false;
-        this.profaned = false;
         CommonKeywordIconsField.useIcons.set(this, true);
         this.showoverheat = showoverheat;
+        this.triggeredBurst = false;
         if(showoverheat) {
             overheat = new abs_mku_overheat(
                     new CardInfo(
@@ -153,7 +153,6 @@ public abstract class abs_mku_card extends CustomCard {
     public void setDamage(int damage) {
         this.setDamage(damage, 0);
     }
-
     public void setDamage(int damage, int damageUpgrade) {
         this.baseDamage = this.damage = damage;
         if(showoverheat){ overheat.baseDamage = this.baseDamage; }
@@ -166,11 +165,9 @@ public abstract class abs_mku_card extends CustomCard {
             }
         }
     }
-
     public void setBlock(int block) {
         this.setBlock(block, 0);
     }
-
     public void setBlock(int block, int blockUpgrade) {
         this.baseBlock = this.block = block;
         if(showoverheat){ overheat.baseBlock = this.baseBlock; }
@@ -183,11 +180,9 @@ public abstract class abs_mku_card extends CustomCard {
             }
         }
     }
-
     public void setMagic(int magic) {
         this.setMagic(magic, 0);
     }
-
     public void setMagic(int magic, int magicUpgrade) {
         this.baseMagicNumber = this.magicNumber = magic;
         if(showoverheat){ overheat.baseMagicNumber = this.baseMagicNumber; }
@@ -200,11 +195,9 @@ public abstract class abs_mku_card extends CustomCard {
             }
         }
     }
-
     public void setMokouMagic(int magic) {
         this.setMokouMagic(magic, 0);
     }
-
     public void setMokouMagic(int magic, int magicUpgrade) {
         this.mokouBaseSecondMagicNumber = this.mokouSecondMagicNumber = magic;
         if(showoverheat){ overheat.mokouBaseSecondMagicNumber = this.mokouBaseSecondMagicNumber; }
@@ -217,56 +210,45 @@ public abstract class abs_mku_card extends CustomCard {
             }
         }
     }
-
     public void setCostUpgrade(int costUpgrade) {
         this.costUpgrade = costUpgrade;
         this.upgradeCost = true;
     }
-
     public void setExhaust(boolean exhaust) {
         this.setExhaust(exhaust, exhaust);
     }
-
     public void setExhaust(boolean baseExhaust, boolean upgExhaust) {
         this.baseExhaust = baseExhaust;
         this.upgradeExhaust = upgExhaust;
         this.exhaust = baseExhaust;
     }
-
     public void setInnate(boolean innate) {
         this.setInnate(innate, innate);
     }
-
     public void setInnate(boolean baseInnate, boolean upgInnate) {
         this.baseInnate = baseInnate;
         this.isInnate = baseInnate;
         this.upgradeInnate = upgInnate;
     }
-
     public void setRetain(boolean retain) {
         this.setRetain(retain, retain);
     }
-
     public void setRetain(boolean baseRetain, boolean upgRetain) {
         this.baseRetain = baseRetain;
         this.selfRetain = baseRetain;
         this.upgradeRetain = upgRetain;
     }
-
     public void setEthereal(boolean ethereal) {
         this.setEthereal(ethereal, ethereal);
     }
-
     public void setEthereal(boolean baseEthereal, boolean upgEthereal) {
         this.baseEthereal = baseEthereal;
         this.isEthereal = baseEthereal;
         this.upgradeEthereal = upgEthereal;
     }
-
     public void setIgnite(boolean ignite) {
         this.setIgnite(ignite, ignite);
     }
-
     public void setIgnite(boolean baseIgnite, boolean upgradeToIgnite) {
         if (baseIgnite) {
             this.baseIgnite = true;
@@ -274,11 +256,9 @@ public abstract class abs_mku_card extends CustomCard {
         }
         this.upgradeIgnite = upgradeToIgnite;
     }
-
     public void setBurst(boolean burst) {
         this.setBurst(burst, burst);
     }
-
     public void setBurst(boolean baseBurst, boolean upgradeToBurst) {
         if (baseBurst) {
             this.baseBurst = true;
@@ -286,11 +266,9 @@ public abstract class abs_mku_card extends CustomCard {
         }
         this.upgradeBurst = upgradeToBurst;
     }
-
     public void setMultiDamage(boolean isMultiDamage) {
         this.isMultiDamage = isMultiDamage;
     }
-
     private CardRarity autoRarity() {
         String packageName = this.getClass().getPackage().getName();
         String directParent;
@@ -344,7 +322,7 @@ public abstract class abs_mku_card extends CustomCard {
             ((abs_mku_card) card).upgradeBurst = this.upgradeBurst;
             ((abs_mku_card) card).mokouBaseSecondMagicNumber = this.mokouBaseSecondMagicNumber;
             ((abs_mku_card) card).mokouSecondMagicNumber = this.mokouSecondMagicNumber;
-            ((abs_mku_card) card).profaned = this.profaned;
+            ((abs_mku_card) card).triggeredBurst = this.triggeredBurst;
         }
         return card;
     }
@@ -380,22 +358,18 @@ public abstract class abs_mku_card extends CustomCard {
             if (baseEthereal ^ upgradeEthereal) { this.isEthereal = upgradeEthereal; }
             if(showoverheat){ overheat.initializeDescription(); }
             this.initializeDescription();
-
         }
     }
-
     @Override
     public void triggerOnGlowCheck() {
         if (this.hasTag(CardENUMs.BURST) && anonymouscheckBurst()) { glowColor = GOLD_BORDER_GLOW_COLOR;
         } else { glowColor = BLUE_BORDER_GLOW_COLOR; }
     }
-
     public void InitializeCard() {
         FontHelper.cardDescFont_N.getData().setScale(1.0f);
         this.initializeTitle();
         this.initializeDescription();
     }
-
     public void displayUpgrades() {
         super.displayUpgrades();
         if (upgradedMokouSecondMagicNumber) {
@@ -403,17 +377,13 @@ public abstract class abs_mku_card extends CustomCard {
             isMokouSecondMagicNumberModified = true;
         }
     }
-
     public void upgradeMokouSecondMagicNumber(int amount) {
         mokouBaseSecondMagicNumber += amount;
         mokouSecondMagicNumber = mokouBaseSecondMagicNumber;
         upgradedMokouSecondMagicNumber = true;
     }
-
-
     // This code is from Infinite Spire!
     // Credit to blank for the original code.
-
     @Override
     public void update(){
         super.update();
@@ -434,14 +404,12 @@ public abstract class abs_mku_card extends CustomCard {
         }
         else{ particles.removeIf(FlameParticle::isnotDead); }
     }
-
     private Vector2 generateRandomPointAlongEdgeOfHitbox() {
         Vector2 result = new Vector2();
         Random random = new Random();
         boolean topOrBottom = random.randomBoolean();
         boolean leftOrRight = random.randomBoolean();
         boolean tbOrLr = random.randomBoolean();
-
         if(tbOrLr){
             result.x = random.random(this.hb.cX - (this.hb.width / 2f), this.hb.cX + (this.hb.width / 2f));
             result.y = topOrBottom ? this.hb.cY + (this.hb.height / 2f) : this.hb.cY - (this.hb.height / 2f);
@@ -449,10 +417,8 @@ public abstract class abs_mku_card extends CustomCard {
             result.x = leftOrRight ? this.hb.cX + (this.hb.width / 2f) : this.hb.cX - (this.hb.width / 2f);
             result.y = random.random(this.hb.cY - (this.hb.height / 2f), this.hb.cY + (this.hb.height / 2f));
         }
-
         return result;
     }
-
     @Override
     public void render(SpriteBatch sb){
         sb.setColor(Color.WHITE.cpy());
@@ -460,7 +426,6 @@ public abstract class abs_mku_card extends CustomCard {
                 .forEach(flameParticle -> flameParticle.render(sb));
         super.render(sb);
     }
-
     public static class FlameParticle {
         private Vector2 pos;
         private Vector2 vel;
@@ -468,9 +433,7 @@ public abstract class abs_mku_card extends CustomCard {
         private Color color;
         private float drawScale;
         private boolean upgraded;
-
         private static TextureAtlas.AtlasRegion image;
-
         public FlameParticle(float x, float y, float drawScale, boolean upgraded) {
             pos = new Vector2(x, y);
             this.drawScale = drawScale;
@@ -496,13 +459,11 @@ public abstract class abs_mku_card extends CustomCard {
                 else { color = getRandomFireColor().cpy(); }
             }
         }
-
         public void update() {
             this.lifeSpan -= Gdx.graphics.getDeltaTime();
             this.pos.x += this.vel.x;
             this.pos.y += this.vel.y;
         }
-
         public void render(SpriteBatch sb) {
             sb.setColor(color);
             int roll = MathUtils.random(0, 2);

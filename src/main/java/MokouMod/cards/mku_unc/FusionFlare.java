@@ -34,7 +34,9 @@ public class FusionFlare extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
-        if(anonymouscheckBurst()){ doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }
+        if(anonymouscheckBurst()){
+            this.triggeredBurst = true;
+            doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE); }
         if(this.overheated){
             this.baseDamage += this.magicNumber;
             atb(new EnhanceBurstAction(this.magicNumber)); }

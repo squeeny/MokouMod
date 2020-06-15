@@ -29,14 +29,13 @@ public class HeatCyclone extends abs_mku_card {
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(RESONANCE, UPG_RESONANCE);
         setBurst(true);
-        this.profaned = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(anonymouscheckBurst() || this.overheated) {
+            this.triggeredBurst = true;
             doDef(this.block);
             atb(new AdvancePhaseAction(this.magicNumber));
-            //if(!this.overheated){ atb(new AdvancePhaseAction()); }
         }
     }
     @Override

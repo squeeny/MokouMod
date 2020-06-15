@@ -39,7 +39,9 @@ public class Sear extends abs_mku_card {
         doVfx(new FlameSlingEffect(p.drawX, p.drawY+(p.hb_h/2f), m.drawX, m.drawY+(m.hb_h/2f)));
         doPow(m, new IgnitePower(m, this.magicNumber));
         doPow(m, new VulnerablePower(m, this.mokouSecondMagicNumber, false));
-        if(upgraded && anonymouscheckBurst()) { atb(new DrawCardAction(p(), DRAW)); }
+        if(upgraded && anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            atb(new DrawCardAction(p(), DRAW)); }
         if(this.overheated){ doPow(m, new WeakPower(m, this.mokouSecondMagicNumber, false)); }
     }
 }

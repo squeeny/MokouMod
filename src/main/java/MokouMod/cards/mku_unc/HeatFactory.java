@@ -25,7 +25,6 @@ public class HeatFactory extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     private static final int UPG_COST = 0;
     private static final int LOSEHP = 5;
-
     public HeatFactory() {
         super(cardInfo, false);
         setCostUpgrade(UPG_COST);
@@ -33,7 +32,6 @@ public class HeatFactory extends abs_mku_card {
         setExhaust(true);
         setBurst(true);
     }
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(anonymouscheckBurst()) {
@@ -42,7 +40,6 @@ public class HeatFactory extends abs_mku_card {
         }
         if(this.overheated) { atb(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE)); }
     }
-
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);

@@ -1,5 +1,6 @@
 package MokouMod.util;
 
+import MokouMod.MokouMod;
 import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.patches.combat.BurstMechanics;
@@ -8,13 +9,16 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
+import java.util.logging.Logger;
+
 import static MokouMod.MokouMod.runAnimation;
 import static Utilities.squeenyUtils.atb;
 import static Utilities.squeenyUtils.p;
 public class mokouUtils {
     /** Mokou General Utils */
     //Checks for Burst without incrementing Resonance - Used for cards.
-    public static boolean anonymouscheckBurst() { return BurstMechanics.PlayerBurstField.isBurst.get(p()); }
+    public static boolean anonymouscheckBurst() {
+        return BurstMechanics.PlayerBurstField.isBurst.get(p()); }
     // Returns a random color, used for VFX.
     public static Color getRandomFireColor() {
         int i = MathUtils.random(3);

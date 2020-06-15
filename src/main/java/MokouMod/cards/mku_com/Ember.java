@@ -36,7 +36,6 @@ public class Ember extends abs_mku_card {
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         doPow(m, new IgnitePower(m, this.magicNumber));
         if(!m.hasPower(IgnitePower.POWER_ID)){ doPow(m, new IgnitePower(m, this.magicNumber)); }
-        if(this.overheated){
-            doPow(p, new IgnitePower(p, this.mokouSecondMagicNumber)); }
+        if(this.overheated){ doPow(p, new IgnitePower(p, this.mokouSecondMagicNumber)); }
     }
 }

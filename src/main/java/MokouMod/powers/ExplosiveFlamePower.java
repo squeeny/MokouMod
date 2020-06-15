@@ -47,7 +47,7 @@ public class ExplosiveFlamePower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (anonymouscheckBurst()) { this.amount--; }
+        this.amount--;
         if (this.amount == 0) {
             flash();
             this.amount = 5;

@@ -35,6 +35,7 @@ public class AdaptivePyromancy extends abs_mku_card {
         doDmg(m, this.damage);
         boolean target = false;
         if (mokouUtils.anonymouscheckBurst()) {
+            this.triggeredBurst = true;
             if (isAttackIntent(m.intent)){
                 doPow(p, new IgnitePower(p, this.magicNumber));
                 if(this.overheated){

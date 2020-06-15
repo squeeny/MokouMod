@@ -40,7 +40,9 @@ public class InfernalWave extends abs_mku_card {
         doVfx(new IronWaveEffect(p.hb.cX, p.hb.cY, m.hb.cX), 0.5F);
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.NONE);
         if (this.upgraded) { atb(new GainEnergyAction(this.magicNumber)); }
-        if (anonymouscheckBurst()) { this.cost = this.cost - this.mokouSecondMagicNumber; }
+        if (anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            this.cost = this.cost - this.mokouSecondMagicNumber; }
         if(this.overheated){ doDef(this.damage); }
     }
 }

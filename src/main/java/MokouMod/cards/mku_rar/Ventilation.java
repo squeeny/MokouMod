@@ -35,6 +35,6 @@ public class Ventilation extends abs_mku_card {
         atb(new GainEnergyAction(this.magicNumber));
         atb(new AdvancePhaseAction(this.magicNumber));
         this.upgradeMagicNumber(this.mokouSecondMagicNumber);
-        if(this.overheated){ this.upgradeMagicNumber(this.magicNumber * 2); }
+        if(this.overheated){ this.upgradeMagicNumber(this.mokouSecondMagicNumber); }
     }
 }

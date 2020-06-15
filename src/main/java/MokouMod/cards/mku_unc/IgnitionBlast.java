@@ -21,7 +21,6 @@ public class IgnitionBlast extends abs_mku_card {
     private static final int POWER_AMOUNT = 1;
     private static final int IGNITE = 3;
     private static final int UPG_IGNITE = 2;
-
     public IgnitionBlast() {
         super(cardInfo, false);
         setMagic(POWER_AMOUNT);
@@ -34,38 +33,3 @@ public class IgnitionBlast extends abs_mku_card {
         if(this.overheated){ atb(new TriggerMarksAction(this)); }
     }
 }
-/*
-public class IgnitionBlast extends abs_mku_card {
-
-    public static final String ID = MokouMod.makeID(IgnitionBlast.class.getSimpleName());
-    public static final String IMG = makeCardPath("PhoenixForm.png");
-
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = MKU.Enums.COLOR_RED;
-    private static final int COST = 2;
-    private static final int DAMAGE = 1;
-    private static final int UPG_DAMAGE = 1;
-
-    public IgnitionBlast() {
-        super(ID, null, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = DAMAGE;
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        mokouUtils.doPow(mokouUtils.p(), new IgnitionBlastPower(mokouUtils.p(), magicNumber));
-    }
-
-    @Override
-    public void upgrade() {
-        if(!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPG_DAMAGE);
-            initializeDescription();
-        }
-    }
-}
-
- */

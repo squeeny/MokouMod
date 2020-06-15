@@ -30,7 +30,7 @@ public class Overheat extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        doDef(this.block);;
+        doDef(this.block);
         atb(new DrawCardAction(p, this.magicNumber));
         if(this.upgraded){ atb(new StokeAction(this.mokouSecondMagicNumber)); }
         if(this.overheated){ atb(new StokeAction(this.mokouSecondMagicNumber)); }

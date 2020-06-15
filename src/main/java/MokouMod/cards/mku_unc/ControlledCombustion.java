@@ -37,6 +37,7 @@ public class ControlledCombustion extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (anonymouscheckBurst()) {
+            this.triggeredBurst = true;
             atb(new ExhaustHandAction());
             atb(new DrawCardAction(magicNumber));
         }

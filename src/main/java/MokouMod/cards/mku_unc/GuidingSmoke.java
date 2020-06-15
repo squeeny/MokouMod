@@ -31,7 +31,9 @@ public class GuidingSmoke extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDmg(m, this.damage);
-        if(anonymouscheckBurst()) { atb(new BetterDiscardPileToHandAction(magicNumber)); }
+        if(anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            atb(new BetterDiscardPileToHandAction(magicNumber)); }
         if(this.overheated){ atb(new ExhumeAction(false)); }
     }
 }

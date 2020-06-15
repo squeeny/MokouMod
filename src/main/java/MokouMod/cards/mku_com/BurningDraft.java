@@ -32,19 +32,18 @@ public class BurningDraft extends abs_mku_card {
         setMokouMagic(ENERGY, UPG_ENERGY);
         setExhaust(true);
         setBurst(true);
-        this.profaned = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(anonymouscheckBurst() || this.overheated) {
+            this.triggeredBurst = true;
             atb(new DrawCardAction(this.magicNumber));
             atb(new GainEnergyAction(this.mokouSecondMagicNumber));
-            //if(!this.overheated){ atb(new AdvancePhaseAction()); }
         }
     }
     @Override
     public void triggerOnGlowCheck() {
-        if ((this.hasTag(CardENUMs.BURST) && anonymouscheckBurst()) || this.overheated) { glowColor = GOLD_BORDER_GLOW_COLOR;
+        if ((this.hasTag(CardENUMs.BURST) && (anonymouscheckBurst()) || this.overheated)) { glowColor = GOLD_BORDER_GLOW_COLOR;
         } else { glowColor = BLUE_BORDER_GLOW_COLOR; }
     }
 }

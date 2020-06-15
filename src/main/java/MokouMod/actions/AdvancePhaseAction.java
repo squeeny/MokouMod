@@ -36,6 +36,9 @@ public class AdvancePhaseAction extends AbstractGameAction {
         for(AbstractPower p : p().powers){
             if(resonatingAura && p instanceof onGainResonanceSubscriber){ ((onGainResonanceSubscriber) p).onGainResonance(); }
         }
+        for(AbstractCard c : p().hand.group){
+            if(c instanceof onGainResonanceSubscriber){ ((onGainResonanceSubscriber) c).onGainResonance(); }
+        }
         this.isDone = true;
     }
 }

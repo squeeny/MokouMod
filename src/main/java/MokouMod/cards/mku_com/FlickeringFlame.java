@@ -35,10 +35,11 @@ public class FlickeringFlame extends abs_mku_card {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         doDmg(m, this.damage, AbstractGameAction.AttackEffect.FIRE);
         doPow(m, new VulnerablePower(m, this.magicNumber, false));
-        if(mokouUtils.anonymouscheckBurst()) { atb(new DrawCardAction(p(), this.mokouSecondMagicNumber)); }
+        if(mokouUtils.anonymouscheckBurst()) {
+            this.triggeredBurst = true;
+            atb(new DrawCardAction(p(), this.mokouSecondMagicNumber)); }
         if(this.overheated){
             doPow(m, new WeakPower(m, this.magicNumber, false));
             atb(new DrawCardAction(p(), this.mokouSecondMagicNumber));

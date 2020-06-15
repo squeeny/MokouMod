@@ -2,157 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2301ff7f-f530-4bc6-b6eb-7a47647bbc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnhanceBurstAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GainIgniteForRemovedBlockAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/PhoenixFeathersAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/StokeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/TriggerIgniteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/TripleIgniteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_overheat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/WarmUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onBurstSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onEnemyGainIgniteSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onIgniteLoseHPSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onLoseIgniteSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onLoseOverheatSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/interfaces/onOtherExhaustSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/cards/AnimationPatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/onOtherExhaust.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeartOfFirePower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/MeltdownPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/MokouFlightPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/ObtainRelicLater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MokouMod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MokouMod.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AddOverheatAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CataclysmAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CataclysmAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/CheckBurstAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnchantingBambooForestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ForestOfTheLostAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EnterBurstAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EruptionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/EruptionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToHandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExhaustPileToHandAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExtinguishAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ExtinguishAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/LoseOverheatAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/OverheatCardAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/ProfanedFlameAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SacredFireAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/SacredFireAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/VolatileScorchingBlastAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/GeothermalAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/OverheatText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cardmods/ProfanedFlameMod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Defend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Defend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Flare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/Strike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/EternalBurstReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/EternalBurstReactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlareStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlareStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IgnitionFlare.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ImperishableNight.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ResoluteFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/RoaringFlare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingFlare.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/SearingShot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/UncontrollableSolarReaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/UncontrollableSolarReaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/VolatileScorchingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/WilloWisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/IndiscriminateIgnition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BlueFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SpontaneousHumanCombustion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/EnchantingBambooForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/EnchantingBambooForest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Extinguish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Extinguish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/GeothermalAscension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Geothermal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/HouraiForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/HouraiForge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ProfanedFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/RadiantBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/RadiantBlade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rekindle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rekindle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ResonatingAura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ResonatingAura.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Cataclysm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Cataclysm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Combust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Combust.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/CrimsonFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/DanceofFlames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/DanceofFlames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FlamingFireTalons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FlamingFireTalons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FusionFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FusionFlare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/GuidingSmoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/GuidingSmoke.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeartofFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeartofFire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatVisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonanceReactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IcarusDive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IcarusDive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgneousBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgneousBlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IllusoryBattlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IllusoryBattlefield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImmortalDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Meltdown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/InfernalOverdrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ThermalPressure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Kindle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ImperishableFlame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/PhoenixFeathers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/PhoenixFeathers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Refresh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Refresh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ResonatingBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RetainTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RetainTemperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarricade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/RisingSunBarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ScorchedEarth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ScorchedEarth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ShiftIgnition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ShiftIgnition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SoaringPhoenixHourai.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SubterraneanCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/SubterraneanCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Trailblazer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Trailblazer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Wildfire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Wildfire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/characters/MKU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/characters/MKU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/BurstMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/BurstMechanics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/VigorNonConsumable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/VigorNonConsumable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/general/ResonanceBurstPhaseValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/relics/BottledPlaceholderField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlareImpending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ImpendingCombustionPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/BlueFlarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SpontaneousHumanCombustionPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HeatVisorPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonanceReactorPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HouraiForgePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/HouraiForgePower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/OverheatPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/OverheatPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/PhoenixFormPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/PhoenixFormPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ResonatingBlastPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitionBlastPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarricadePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/RisingSunBarrierPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/SilencedPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/TrailblazerPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/TrailblazerPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ExhaustionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ExhaustionPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/MokouEnergyOrb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/MokouEnergyOrb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ResonanceBurst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/ui/ResonanceBurst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/universal/CardHPLossHook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/MokouTutorials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/MokouTutorials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BetterScreenOnFireEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BetterScreenOnFireEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/combat/BlueHemokinesisParticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BetterGiantFireEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BetterGiantFireEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueFastSmokeParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueFastSmokeParticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueInflameEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/BlueInflameEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/CasualFlameParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/CasualFlameParticleEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/RedFireBurstParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/RedFireBurstParticleEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/StraightFireParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/vfx/general/StraightFireParticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,11 +71,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -243,25 +137,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="267" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591719079275" />
-    <state width="937" height="266" key="GridCell.Tab.0.bottom" timestamp="1592051549748">
+    <state width="936" height="265" key="GridCell.Tab.0.bottom" timestamp="1592213639491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="936" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
     <state width="937" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="937" height="266" key="GridCell.Tab.0.center" timestamp="1592051549748">
+    <state width="936" height="265" key="GridCell.Tab.0.center" timestamp="1592213639491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="936" height="265" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
     <state width="937" height="254" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="937" height="266" key="GridCell.Tab.0.left" timestamp="1592051549748">
+    <state width="936" height="265" key="GridCell.Tab.0.left" timestamp="1592213639491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="936" height="265" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
     <state width="937" height="254" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="937" height="266" key="GridCell.Tab.0.right" timestamp="1592051549748">
+    <state width="936" height="265" key="GridCell.Tab.0.right" timestamp="1592213639491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051549748" />
+    <state width="936" height="265" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
     <state width="937" height="254" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1589121219646">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -280,15 +174,15 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2100" y="48" width="1064" height="738" key="dock-window-1/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591352759362" />
-    <state x="549" y="250" width="1140" height="606" key="find.popup" timestamp="1592039903092">
+    <state x="549" y="250" width="1140" height="606" key="find.popup" timestamp="1592211655606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="549" y="250" width="1140" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592039903092" />
+    <state x="549" y="250" width="1140" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592211655606" />
     <state x="2866" y="268" width="843" height="630" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458592707" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1592051540090">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1592213639502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592051540090" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639502" />
     <state x="2536" y="249" width="672" height="704" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373117" />
     <state x="484" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1591270091666">
       <screen x="0" y="0" width="1920" height="1040" />

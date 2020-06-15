@@ -2,6 +2,7 @@ package MokouMod.cards.mku_rar;
 
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.interfaces.onBurstSubscriber;
+import MokouMod.interfaces.onGainResonanceSubscriber;
 import MokouMod.vfx.combat.BlueSearingBlowEffect;
 import Utilities.CardInfo;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
@@ -13,7 +14,7 @@ import static MokouMod.MokouMod.makeID;
 import static Utilities.squeenyUtils.doDmg;
 import static Utilities.squeenyUtils.doVfx;
 
-public class SearingBlow extends abs_mku_card implements onBurstSubscriber {
+public class SearingBlow extends abs_mku_card implements onGainResonanceSubscriber {
     private final static CardInfo cardInfo = new CardInfo(
             SearingBlow.class.getSimpleName(),
             COSTS[2],
@@ -55,7 +56,7 @@ public class SearingBlow extends abs_mku_card implements onBurstSubscriber {
          return new SearingBlow(this.timesUpgraded, this.upgradeable);
     }
     @Override
-    public void onBurst() {
+    public void onGainResonance() {
         if(this.upgradeable){ this.upgrade(); }
         else { this.upgradeable = true; }
     }

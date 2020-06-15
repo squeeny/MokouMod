@@ -27,7 +27,6 @@ public class Stoke extends abs_mku_card implements onEnemyGainIgniteSubscriber {
     public Stoke() {
         super(cardInfo, false, false);
         setMagic(DAMAGE_UP, UPG_DAMAGE_UP);
-        setIgnite(true);
         setExhaust(true);
     }
     public void use(AbstractPlayer p, AbstractMonster m) { }

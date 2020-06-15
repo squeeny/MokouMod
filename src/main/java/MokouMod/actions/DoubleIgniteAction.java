@@ -14,9 +14,7 @@ public class DoubleIgniteAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.target != null && this.target.hasPower(IgnitePower.POWER_ID)) {
-            doPow(p(), new IgnitePower(this.target, this.target.getPower(IgnitePower.POWER_ID).amount), true);
-        }
+        if (this.target != null && this.target.hasPower(IgnitePower.POWER_ID)) { doPow(target, new IgnitePower(this.target, this.target.getPower(IgnitePower.POWER_ID).amount), true); }
         this.isDone = true;
     }
 }

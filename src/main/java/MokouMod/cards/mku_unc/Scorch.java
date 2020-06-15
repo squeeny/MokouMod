@@ -35,6 +35,7 @@ public class Scorch extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++) { doDmg(m, this.damage, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL); }
         if (mokouUtils.anonymouscheckBurst()) {
+            this.triggeredBurst = true;
             doVfx(new FlameBurstEffect(p.hb.cX, p.hb.cY, 30));
             atb(new GainEnergyAction(this.mokouSecondMagicNumber));
         }

@@ -1,5 +1,6 @@
 package MokouMod.patches.combat;
 
+import MokouMod.MokouMod;
 import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.patches.cards.CardENUMs;
@@ -39,16 +40,16 @@ public class ResonanceMechanics {
     public static class CaptureResonanceActivation {
         @SpireInsertPatch(locator = ResonanceMechanics.CaptureResonanceActivation.Locator.class)
         public static void patch(UseCardAction __instance, AbstractCard c, AbstractCreature target) {
-            if((anonymouscheckBurst() && c.hasTag(CardENUMs.BURST))){
-                System.out.println(c + " is in burst and has a burst tag");
-                atb(new AdvancePhaseAction()); }
+            if((c instanceof abs_mku_card && c.hasTag(CardENUMs.BURST))){
+                if(((abs_mku_card) c).triggeredBurst){
+                    MokouMod.logger.info(c.name + " triggered Burst");
+                    atb(new AdvancePhaseAction());
+                    ((abs_mku_card) c).triggeredBurst = false;
+                }
+            }
             else if(p().hasPower(TrailblazerPower.POWER_ID)){
-                System.out.println(c + " : Trailblazer, resolves regardless");
-                atb(new AdvancePhaseAction()); }
-            else if(!anonymouscheckBurst() && c instanceof abs_mku_card){
-                if(((abs_mku_card) c).overheated && ((abs_mku_card) c).profaned ){
-                    System.out.println(c + " overheated and profaned, not in burst");
-                    atb(new AdvancePhaseAction()); }
+                System.out.println(c + " triggered Burst, [Trailblazer].");
+                atb(new AdvancePhaseAction());
             }
         }
         private static class Locator extends SpireInsertLocator {

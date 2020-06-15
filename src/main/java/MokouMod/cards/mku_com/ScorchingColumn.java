@@ -34,7 +34,11 @@ public class ScorchingColumn extends abs_mku_card {
         for(AbstractMonster mo: getAliveMonsters()){ if(mo.hasPower(IgnitePower.POWER_ID)){ ++IgniteChecker; } }
         if(IgniteChecker > 0){ atb(new GainEnergyAction(this.magicNumber)); }
         doDmg(m, this.damage);
-        for(AbstractMonster mo: getAliveMonsters()){ if(mo.hasPower(IgnitePower.POWER_ID)){ doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false); } }
+        if(this.overheated){
+            for(AbstractMonster mo: getAliveMonsters()) {
+                if (mo.hasPower(IgnitePower.POWER_ID)) { doAllDmg(this.damage, AbstractGameAction.AttackEffect.FIRE, false); }
+            }
+        }
     }
 }
 

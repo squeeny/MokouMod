@@ -26,7 +26,6 @@ public class FujiyamaVolcano extends abs_mku_card {
         setDamage(DMG, UPG_DMG);
         setMultiDamage(true);
         setMagic(IGNITE, UPG_IGNITE);
-        setIgnite(true);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

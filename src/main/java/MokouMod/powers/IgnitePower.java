@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,7 +44,7 @@ public class IgnitePower extends AbstractPower implements CloneablePowerInterfac
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        type = this.owner instanceof AbstractMonster ? PowerType.DEBUFF : PowerType.BUFF;
+        type = this.owner == p() ? PowerType.BUFF : PowerType.DEBUFF;
         updateDescription();
         isTurnBased = true;
         loadRegion("explosive");
@@ -57,10 +58,12 @@ public class IgnitePower extends AbstractPower implements CloneablePowerInterfac
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (this.owner == p() && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS) {
             flash();
+            System.out.println("player");
             att(new ReducePowerAction(this.owner, this.owner, this, this.amount));
             doPow(p(), new VigorPower(p(), this.amount), false);
         } else if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && damageAmount > 0) {
             flash();
+            System.out.println("enemy");
             att(new ReducePowerAction(this.owner, this.owner, this, this.amount));
             doPow(p(), new VigorPower(p(), this.amount), false);
         }

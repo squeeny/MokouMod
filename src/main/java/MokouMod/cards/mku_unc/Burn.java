@@ -32,6 +32,7 @@ public class Burn extends abs_mku_card {
     public void use(AbstractPlayer p, AbstractMonster m) {
         doDef(this.block);
         if(anonymouscheckBurst()) {
+            this.triggeredBurst = true;
             if (this.upgraded) { atb(new ExhaustAction(this.magicNumber, false));
             } else { atb(new ExhaustAction(this.magicNumber, true, false, false)); }
         }
