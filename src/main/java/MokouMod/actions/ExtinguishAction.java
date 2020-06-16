@@ -1,28 +1,19 @@
 package MokouMod.actions;
 
-import MokouMod.powers.IgnitePower;
-import MokouMod.vfx.ObtainRelicLater;
+import MokouMod.MokouMod;
+import basemod.abstracts.CustomBottleRelic;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
-import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
+import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 import static Utilities.squeenyUtils.getAliveMonsters;
-import Utilities.CardInfo;
 
 import java.util.ArrayList;
 
@@ -58,13 +49,28 @@ public class ExtinguishAction extends AbstractGameAction {
             if(hitTotal){
                 getRelic(AbstractRelic.RelicTier.RARE);
                 if(this.overheated){ getRelic(AbstractRelic.RelicTier.SHOP); }
-                for(AbstractMonster mo: getAliveMonsters()){
-                    att(new SuicideAction(mo));
-                }
-                this.isDone = true;
+                for(AbstractMonster mo: getAliveMonsters()){ att(new InstantKillAction(mo)); }
             }
-            else { this.isDone = true; }
+            this.isDone = true;
         }
     }
-    public void getRelic(AbstractRelic.RelicTier relicTier) { AbstractDungeon.getCurrRoom().addRelicToRewards(relicTier); }
+    public void getRelic(AbstractRelic.RelicTier relicTier) {
+        AbstractRelic ______ = AbstractDungeon.returnRandomRelic(relicTier);
+        do { ______ = AbstractDungeon.returnRandomRelic(relicTier);
+        } while (______.relicId.equals(BottledFlame.ID)
+                || ______.relicId.equals(BottledLightning.ID)
+                || ______.relicId.equals(BottledTornado.ID)
+                || ______.relicId.equals(Astrolabe.ID)
+                || ______.relicId.equals(TinyHouse.ID)
+                || ______.relicId.equals(Cauldron.ID)
+                || ______.relicId.equals(Orrery.ID)
+                || ______.relicId.equals(PandorasBox.ID)
+                || ______.relicId.equals("Kintsugi")
+                || ______ instanceof CustomBottleRelic
+                || ______.relicId.equals("Thesaurus")
+                || ______.relicId.equals(EmptyCage.ID)
+                || ______.relicId.equals(CallingBell.ID));
+        MokouMod.logger.info(______);
+        AbstractDungeon.getCurrRoom().addRelicToRewards(______);
+    }
 }

@@ -14,7 +14,7 @@ import static Utilities.squeenyUtils.*;
 public class Overheat extends abs_mku_card {
     private final static CardInfo cardInfo = new CardInfo(
             Overheat.class.getSimpleName(),
-            COSTS[0],
+            COSTS[1],
             CardType.SKILL,
             CardTarget.NONE
     );
