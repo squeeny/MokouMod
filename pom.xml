@@ -6,7 +6,7 @@
     <groupId>mokoumod</groupId>
     <artifactId>MokouMod</artifactId>
     <name>The Immortal</name>
-    <version>1.2.4</version>
+    <version>1.2.5</version>
     <description></description>
 
     <properties>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>capricore</groupId>
             <artifactId>CapriCore</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
             <scope>system</scope>
             <!--systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/CapriCore.jar</systemPath>-->
             <systemPath>${Steam.path}/workshop/content/646570/2121636701/CapriCore.jar</systemPath>

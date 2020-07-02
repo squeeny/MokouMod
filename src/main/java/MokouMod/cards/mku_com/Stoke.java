@@ -28,12 +28,9 @@ public class Stoke extends abs_mku_card implements onEnemyGainIgniteSubscriber {
         super(cardInfo, false, false);
         setMagic(DAMAGE_UP, UPG_DAMAGE_UP);
         setExhaust(true);
+        setEthereal(true);
     }
     public void use(AbstractPlayer p, AbstractMonster m) { }
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-    }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) { return false; }
     @Override

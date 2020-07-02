@@ -47,7 +47,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: capricore:CapriCore:1.2.1">
+      <library name="Maven: capricore:CapriCore:1.2.2">
         <CLASSES>
           <root url="jar://C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/2121636701/CapriCore.jar!/" />
         </CLASSES>

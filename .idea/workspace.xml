@@ -5,51 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MokouMod.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MokouMod.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/MokouMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/AdvancePhaseAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/DoubleIgniteAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchBurstCardAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/FetchIgniteCardAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/actions/RekindleAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_abs/abs_mku_card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_bas/HeatSpark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/AdaptivePyromancy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BlazingComet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/BurningDraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Ember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Firecracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FlickeringFlame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/FujiyamaVolcano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/InfernalWave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Overheat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/ScorchingColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Sear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Singe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/Stoke.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_com/TemporalFireSeal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/BurningHiddenBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/ExplosiveFlame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/PhoenixForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Rebirth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SacredFire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/SearingBlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_rar/Ventilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Afterburner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Burn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/ControlledCombustion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Fireball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FusionFlare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/FusionFlare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/GuidingSmoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/GuidingSmoke.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatCyclone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/HeatTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBarrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/IgnitionBlast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/cards/mku_unc/Scorch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/patches/combat/ResonanceMechanics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/ExplosiveFlamePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/powers/IgnitePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MokouMod/util/mokouUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
@@ -89,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CirnoMod" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -133,39 +89,39 @@
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591897657421" />
     <state x="2610" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591647700697" />
-    <state x="774" y="267" key="FileChooserDialogImpl" timestamp="1591719079275">
+    <state x="774" y="267" key="FileChooserDialogImpl" timestamp="1592920422699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="774" y="267" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1591719079275" />
-    <state width="936" height="265" key="GridCell.Tab.0.bottom" timestamp="1592213639491">
+    <state x="774" y="267" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592920422699" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1592676446549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592676446549" />
     <state width="937" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="936" height="265" key="GridCell.Tab.0.center" timestamp="1592213639491">
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1592676446549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="265" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592676446549" />
     <state width="937" height="254" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="936" height="265" key="GridCell.Tab.0.left" timestamp="1592213639491">
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1592676446549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="265" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592676446549" />
     <state width="937" height="254" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
-    <state width="936" height="265" key="GridCell.Tab.0.right" timestamp="1592213639491">
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1592676446549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="265" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639491" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592676446549" />
     <state width="937" height="254" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373101" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1589121219646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1589121219646" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1592041178615">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1592819765810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592041178615" />
-    <state x="2576" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591683557739" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592819765810" />
+    <state x="2576" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1592349163209" />
     <state x="598" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588086257254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -179,10 +135,10 @@
     </state>
     <state x="549" y="250" width="1140" height="606" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592211655606" />
     <state x="2866" y="268" width="843" height="630" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591458592707" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1592213639502">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1592676446560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592213639502" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1592676446560" />
     <state x="2536" y="249" width="672" height="704" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591961373117" />
     <state x="484" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1591270091666">
       <screen x="0" y="0" width="1920" height="1040" />
