@@ -20,8 +20,8 @@ public class HeatCyclone extends abs_mku_card {
             CardTarget.SELF
     );
     public static final String ID = makeID(cardInfo.cardName);
-    private static final int BLOCK = 18;
-    private static final int UPG_BLOCK = 4;
+    private static final int BLOCK = 15;
+    private static final int UPG_BLOCK = 3;
     private static final int RESONANCE = 2;
     private static final int UPG_RESONANCE = 1;
     public HeatCyclone() {

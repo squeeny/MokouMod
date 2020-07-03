@@ -27,8 +27,6 @@ public class ResonanceMechanics {
     public static SpireField<Integer> resonanceburstPhase = new SpireField<>(()->0);
     public static SpireField<Integer> maxResonanceBurstPhase = new SpireField<>(()->10);
     public static SpireField<Integer> resonanceTurnAmount = new SpireField<>(() -> 0);
-    public static SpireField<Boolean> geothermalResonance = new SpireField<>(()-> false);
-    public static SpireField<Boolean> geothermalResonanceAuth = new SpireField<>(()-> false);
 
     @SpirePatch(clz = AbstractPlayer.class, method = "applyStartOfTurnRelics")
     public static class TurnEndResonanceReset {

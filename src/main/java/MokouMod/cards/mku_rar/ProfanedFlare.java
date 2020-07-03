@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static MokouMod.MokouMod.makeID;
 import Utilities.CardInfo;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static Utilities.squeenyUtils.*;
@@ -26,8 +27,10 @@ public class ProfanedFlare extends abs_mku_card {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(AbstractMonster mo: getAliveMonsters()){
-            if(p().hasPower(IgnitePower.POWER_ID)) { doPow(mo, new StrengthPower(mo, -p().getPower(IgnitePower.POWER_ID).amount)); }
+            if(p().hasPower(IgnitePower.POWER_ID)) {
+                doPow(mo, new StrengthPower(mo, -p().getPower(IgnitePower.POWER_ID).amount));
+                if (!this.overheated){ doPow(mo, new LoseStrengthPower(mo, -p().getPower(IgnitePower.POWER_ID).amount)); }
+            }
         }
-        if (this.overheated) { atb(new GainBlockPerIgniteStackAction()); }
     }
 }

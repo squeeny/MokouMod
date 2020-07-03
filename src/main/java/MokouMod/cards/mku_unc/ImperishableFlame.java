@@ -1,5 +1,6 @@
 package MokouMod.cards.mku_unc;
 
+import MokouMod.actions.AdvancePhaseAction;
 import MokouMod.cards.mku_abs.abs_mku_card;
 import MokouMod.patches.combat.BurstMechanics;
 import MokouMod.powers.IgnitePower;
@@ -25,13 +26,21 @@ public class ImperishableFlame extends abs_mku_card {
     public static final String ID = makeID(cardInfo.cardName);
     private static final int IGNITE = 5;
     private static final int UPG_IGNITE = 2;
+    private static final int RESONANCE = 1;
+    private static final int UPG_RESONANCE = 1;
     public ImperishableFlame() {
         super(cardInfo, false);
         setMagic(IGNITE, UPG_IGNITE);
+        setMokouMagic(RESONANCE, UPG_RESONANCE);
+        this.purgeOnUse = true;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         doPow(m, new IgnitePower(m, this.magicNumber));
-        if(this.overheated){ for(AbstractMonster mo: getAliveMonsters()){ doPow(mo, new IgnitePower(mo, this.magicNumber)); } }
+        atb(new AdvancePhaseAction(this.mokouSecondMagicNumber));
+        if(this.overheated){
+            for(AbstractMonster mo: getAliveMonsters()){ doPow(mo, new IgnitePower(mo, this.magicNumber)); }
+            atb(new AdvancePhaseAction(this.mokouSecondMagicNumber));
+        }
     }
     public void triggerOnExhaust() {
         atb(new MakeTempCardInHandAction(makeStatEquivalentCopy()));

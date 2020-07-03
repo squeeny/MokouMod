@@ -140,7 +140,6 @@ MokouMod\actions\TripleIgniteAction.class
 MokouMod\vfx\general\CalmFireEffect.class
 MokouMod\cards\mku_unc\FlamingFireTalons.class
 MokouMod\cards\mku_unc\Meltdown.class
-MokouMod\actions\GeothermalAction.class
 MokouMod\cards\mku_com\TemporalFireSeal.class
 MokouMod\cards\mku_unc\Fireball.class
 MokouMod\patches\cards\AnimationPatch.class

@@ -59,8 +59,7 @@ public class MokouMod implements
         OnStartBattleSubscriber,
         PreRoomRenderSubscriber,
         PostBattleSubscriber,
-        PreStartGameSubscriber,
-        StartActSubscriber{
+        PreStartGameSubscriber{
     public static final Logger logger = LogManager.getLogger(MokouMod.class.getName());
     private static String modID;
     public static boolean[] activeTutorials = new boolean[]{true};
@@ -88,7 +87,6 @@ public class MokouMod implements
     public static final String MKU_SHOULDER_2 = "CapriCoreResources/images/MokouMod/char/mokou/shoulder2.png";
     public static final String MKU_CORPSE = "CapriCoreResources/images/MokouMod/char/mokou/corpse.png";
     public static final String BADGE_IMAGE = "CapriCoreResources/images/MokouMod/Badge.png";
-    public int threeAM_AWFUL_ACT_BYPASS_HELP = 0;
 
     public MokouMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -202,10 +200,6 @@ public class MokouMod implements
             resonanceBurst.reset();
             BurstMechanics.PlayerBurstField.isBurst.set(p(), false);
             drawResonanceBurstUI = true;
-            if (ResonanceMechanics.geothermalResonance.get(p()) || ResonanceMechanics.geothermalResonanceAuth.get(p())){
-                atb(new AdvancePhaseAction(ResonanceMechanics.maxResonanceBurstPhase.get(p())));
-                ResonanceMechanics.geothermalResonance.set(p(), false);
-            }
         }
     }
     @Override
@@ -246,20 +240,5 @@ public class MokouMod implements
         BurstMechanics.PlayerBurstField.isBurst.set(p(), false);
         if(p().hasPower(OverheatPower.POWER_ID)){ atb(new RemoveSpecificPowerAction(p(), p(), OverheatPower.POWER_ID)); }
         drawResonanceBurstUI = false;
-        if (ResonanceMechanics.geothermalResonance.get(p()) != ResonanceMechanics.geothermalResonanceAuth.get(p())){
-            ResonanceMechanics.geothermalResonance.set(p(), false);
-            ResonanceMechanics.geothermalResonanceAuth.set(p(), false);
-        }
-    }
-    @Override
-    public void receiveStartAct() {
-        if(AbstractDungeon.actNum == 1 && !Settings.isEndless) {
-            if (threeAM_AWFUL_ACT_BYPASS_HELP != 0) { threeAM_AWFUL_ACT_BYPASS_HELP = 0;
-            } else {
-                threeAM_AWFUL_ACT_BYPASS_HELP++;
-                ResonanceMechanics.geothermalResonance.set(p(), false);
-                ResonanceMechanics.geothermalResonanceAuth.set(p(), false);
-            }
-        }
     }
 }

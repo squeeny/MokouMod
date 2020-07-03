@@ -25,6 +25,7 @@ public class HeartofFire extends abs_mku_card {
         super(cardInfo, false);
         setMagic(HEALTH, UPG_HEALTH);
         setMokouMagic(VIGOR);
+        setInnate(false, true);
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         doPow(p, new HeartOfFirePower(p));

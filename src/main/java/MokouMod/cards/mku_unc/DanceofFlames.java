@@ -19,7 +19,7 @@ public class DanceofFlames extends abs_mku_card {
     );
     public static final String ID = makeID(cardInfo.cardName);
     private static final int IGNITE = 3;
-    private static final int UPG_IGNITE = 3;
+    private static final int UPG_IGNITE = 2;
     private static final int IGNITE_BLOCK = 3;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
