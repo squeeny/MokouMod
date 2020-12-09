@@ -24,7 +24,6 @@ import static Utilities.squeenyUtils.*;
         }
 )
 
-
 public class VigorNonConsumable {
 
     public static SpireReturn<Void> Prefix(VigorPower __instance, AbstractCard c, UseCardAction action) {

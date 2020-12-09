@@ -287,7 +287,7 @@ public abstract class abs_mku_card extends CustomCard {
             case "mku_bas":
                 return CardRarity.BASIC;
             default:
-                MokouMod.logger.info("Automatic Card rarity resulted in SPECIAL, input: " + directParent);
+                //MokouMod.logger.info("Automatic Card rarity resulted in SPECIAL, input: " + directParent);
                 return CardRarity.SPECIAL;
         }
     }

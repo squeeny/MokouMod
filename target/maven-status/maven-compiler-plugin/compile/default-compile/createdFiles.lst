@@ -15,6 +15,7 @@ MokouMod\vfx\combat\unique\ReviveEffect.class
 MokouMod\cards\mku_unc\Afterburner.class
 MokouMod\patches\general\Immortality$ImmortalDeathPrevention.class
 MokouMod\cards\mku_unc\HeatTransfer.class
+MokouMod\patches\general\MetricsPatches$SendPutInsteadOfPostPatch.class
 MokouMod\patches\combat\ExhaustionMechanics$HidePanel.class
 MokouMod\actions\EruptionAction.class
 MokouMod\ui\MokouEnergyOrb.class
@@ -45,6 +46,7 @@ MokouMod\actions\GainBlockPerIgniteStackAction.class
 MokouMod\cards\mku_abs\abs_mku_overheat.class
 MokouMod\powers\HeartOfFirePower.class
 MokouMod\patches\general\Immortality$ImmortalityFields.class
+MokouMod\patches\general\MetricsPatches$RunPatch.class
 MokouMod\cards\mku_rar\PhoenixForm.class
 MokouMod\cards\mku_unc\Combust.class
 MokouMod\cards\mku_com\Sear.class
@@ -92,6 +94,7 @@ MokouMod\vfx\general\BetterGiantFireEffect.class
 MokouMod\powers\SpontaneousHumanCombustionPower.class
 MokouMod\cards\mku_unc\Refresh.class
 MokouMod\actions\GainIgniteForRemovedBlockAction.class
+MokouMod\patches\general\MetricsPatches$SendPutInsteadOfPostPatch$Locator.class
 MokouMod\cards\mku_rar\Rekindle.class
 MokouMod\actions\StokeAction.class
 MokouMod\actions\SwitchPilesAction.class
@@ -108,6 +111,7 @@ MokouMod\characters\MKU$Enums.class
 MokouMod\cards\mku_unc\Cataclysm.class
 MokouMod\powers\ExplosiveFlamePower.class
 MokouMod\actions\SacredFireAction.class
+MokouMod\patches\general\MetricsPatches$ShouldUploadMetricData.class
 MokouMod\patches\combat\ExhaustionMechanics$PanelRender$Locator.class
 MokouMod\ui\ExhaustionPanel.class
 MokouMod\interfaces\onOtherExhaustSubscriber.class
@@ -136,6 +140,7 @@ MokouMod\interfaces\onBurstSubscriber.class
 MokouMod\cards\mku_abs\abs_mku_card.class
 MokouMod\powers\IgnitionBlastPower.class
 MokouMod\actions\EnhanceBurstAction.class
+MokouMod\patches\general\MetricsPatches$SendPostPatch.class
 MokouMod\actions\TripleIgniteAction.class
 MokouMod\vfx\general\CalmFireEffect.class
 MokouMod\cards\mku_unc\FlamingFireTalons.class
@@ -205,6 +210,7 @@ MokouMod\actions\ClearAllDebuffsAction.class
 MokouMod\characters\MKU.class
 MokouMod\cards\mku_com\Stoke.class
 MokouMod\cards\mku_rar\RadiantBlade.class
+MokouMod\patches\general\MetricsPatches.class
 MokouMod\interfaces\onIgniteLoseHPSubscriber.class
 MokouMod\cards\mku_bas\HeatSpark.class
 MokouMod\actions\FetchBurstCardAction.class
